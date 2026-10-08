@@ -1,0 +1,4350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <title>NexGen Agentic AI Summit — London 2027</title>
+    <meta name="description" content="NexGen Agentic AI Summit, London Edition. 3rd June 2027, 09:00 HRS BST, London, United Kingdom. An in-person summit on moving agentic AI from pilot to production.">
+    <meta name="theme-color" content="#F6F8FC">
+    <meta property="og:title" content="NexGen Agentic AI Summit — London 2027">
+    <meta property="og:description" content="Taking agentic AI from promise to production, the UK way. 3rd June 2027, London, United Kingdom.">
+    <!-- REPLACE: social share image, 1200 × 630 px -->
+    <meta property="og:image" content="assets/images/Hero Main.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =================================================================
+       NEXGEN AGENTIC AI SUMMIT · NEW YORK 2027 — light redesign
+       -----------------------------------------------------------------
+       1. Tokens            8. Stats             15. 1-on-1 meetings
+       2. Base              9. Why attend        16. Roundtables
+       3. Layout & type    10. Who should attend 17. Packages (tickets)
+       4. Buttons & icons  11. Gallery           18. Blog
+       5. Image placeholder 12. Industry         19. Final CTA
+       6. Nav & drawer     13. Topics            20. Footer
+       7. Hero + About     14. Speakers/logos    21. Modal · 22. Motion · 23. Responsive
+       ================================================================= */
+
+        /* ---------- 1. TOKENS ---------- */
+        :root {
+            --paper: #F6F8FC;
+            --white: #FFFFFF;
+            --mist: #EFF3FF;
+            --lilac: #F4F1FF;
+
+            --ink: #0F1B3D;
+            --ink-2: #2B3760;
+            --slate: #56627F;
+            --slate-2: #7A849E;
+            --line: #E1E6F2;
+            --line-2: #CFD7EA;
+
+            --blue: #2A5CFF;
+            --blue-700: #1D46D8;
+            --blue-50: #EAF0FF;
+            --blue-100: #DCE5FF;
+            --violet: #6A4BEA;
+            --violet-50: #F1EDFF;
+
+            --grad: linear-gradient(120deg, #2A5CFF 0%, #4E56F0 55%, #6A4BEA 100%);
+
+            --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            --fs-hero: clamp(2.5rem, 1.4rem + 3.4vw, 4.1rem);
+            --fs-h2: clamp(2rem, 1.4rem + 2.3vw, 3.2rem);
+            --fs-h3: clamp(1.2rem, 1.1rem + .45vw, 1.45rem);
+            --fs-lead: clamp(1.06rem, 1rem + .3vw, 1.25rem);
+            --fs-small: .9375rem;
+
+            --pad: clamp(20px, 4.5vw, 56px);
+            --gap: clamp(14px, 1.8vw, 24px);
+            --r-sm: 12px;
+            --r: 18px;
+            --r-lg: 26px;
+            --r-xl: 34px;
+
+            --shadow-sm: 0 1px 2px rgba(15, 27, 61, .06);
+            --shadow: 0 1px 2px rgba(15, 27, 61, .05), 0 14px 34px -18px rgba(15, 27, 61, .22);
+            --shadow-lg: 0 2px 6px rgba(15, 27, 61, .05), 0 34px 70px -34px rgba(15, 27, 61, .32);
+
+            --ease: cubic-bezier(.2, .7, .2, 1);
+            --nav-h: 72px;
+        }
+
+        /* ---------- 2. BASE ---------- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-h) + 12px);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--font);
+            font-size: 1rem;
+            line-height: 1.65;
+            font-feature-settings: "cv11", "ss01";
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font: inherit;
+            color: inherit;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            padding: 0
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            color: var(--ink);
+            line-height: 1.08;
+            letter-spacing: -.03em;
+            font-weight: 800
+        }
+
+        p {
+            margin: 0
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        ::selection {
+            background: var(--blue);
+            color: #fff
+        }
+
+        :focus-visible {
+            outline: 2.5px solid var(--blue);
+            outline-offset: 3px;
+            border-radius: 6px
+        }
+
+        .skip {
+            position: absolute;
+            left: -9999px;
+            top: 10px;
+            z-index: 200;
+            background: var(--blue);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .skip:focus {
+            left: 16px
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ---------- 3. LAYOUT & TYPE ---------- */
+        .container {
+            max-width: 1240px;
+            margin-inline: auto;
+            padding-inline: var(--pad)
+        }
+
+        .section {
+            position: relative;
+            padding-block: clamp(72px, 9vw, 128px)
+        }
+
+        .section--white {
+            background: var(--white)
+        }
+
+        .section--mist {
+            background: var(--mist)
+        }
+
+        .section--lilac {
+            background: var(--lilac)
+        }
+
+        .section--paper {
+            background: var(--paper)
+        }
+
+        .head {
+            max-width: 760px;
+            margin-bottom: clamp(36px, 5vw, 60px)
+        }
+
+        .head h2 {
+            font-size: var(--fs-h2)
+        }
+
+        .head p {
+            margin-top: 18px;
+            color: var(--slate);
+            font-size: var(--fs-lead);
+            line-height: 1.6
+        }
+
+        .head--split {
+            max-width: none;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(20px, 5vw, 72px);
+            align-items: end;
+        }
+
+        .head--split p {
+            margin-top: 0
+        }
+
+        .subhead {
+            margin-top: 14px;
+            font-size: var(--fs-h3);
+            font-weight: 600;
+            letter-spacing: -.02em;
+            color: var(--ink-2);
+            line-height: 1.3;
+            max-width: 30ch;
+        }
+
+        .lead {
+            font-size: var(--fs-lead);
+            color: var(--ink-2);
+            line-height: 1.6
+        }
+
+        .body {
+            color: var(--slate)
+        }
+
+        .body+.body,
+        .lead+.body {
+            margin-top: 16px
+        }
+
+        /* ---------- 4. BUTTONS & ICONS ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 50px;
+            padding: 13px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: .95rem;
+            letter-spacing: -.005em;
+            line-height: 1.2;
+            border: 1.5px solid transparent;
+            transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .3s var(--ease), transform .25s var(--ease);
+            white-space: nowrap;
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn--primary {
+            background: var(--blue);
+            color: #fff;
+            box-shadow: 0 10px 24px -12px rgba(42, 92, 255, .75);
+        }
+
+        .btn--primary:hover {
+            background: var(--blue-700);
+            box-shadow: 0 14px 30px -12px rgba(42, 92, 255, .8)
+        }
+
+        .btn--outline {
+            background: var(--white);
+            color: var(--ink);
+            border-color: var(--line-2)
+        }
+
+        .btn--outline:hover {
+            border-color: var(--blue);
+            color: var(--blue)
+        }
+
+        .btn--quiet {
+            color: var(--ink-2);
+            padding-inline: 14px;
+            border-color: transparent
+        }
+
+        .btn--quiet:hover {
+            color: var(--blue);
+            background: var(--blue-50)
+        }
+
+        .btn--light {
+            background: #fff;
+            color: var(--blue-700)
+        }
+
+        .btn--light:hover {
+            background: var(--blue-50)
+        }
+
+        .btn--on-dark {
+            color: #fff;
+            border-color: rgba(255, 255, 255, .6);
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px)
+        }
+
+        .btn--on-dark:hover {
+            background: rgba(255, 255, 255, .12);
+            border-color: #fff
+        }
+
+        .btn--sm {
+            min-height: 42px;
+            padding: 9px 18px;
+            font-size: .88rem
+        }
+
+        .btn--block {
+            width: 100%
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px
+        }
+
+        .ic {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0
+        }
+
+        .icon-tile {
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: var(--blue-50);
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .icon-tile--violet {
+            background: var(--violet-50);
+            color: var(--violet)
+        }
+
+        .icon-tile--solid {
+            background: var(--grad);
+            color: #fff;
+            box-shadow: 0 10px 20px -12px rgba(78, 86, 240, .9)
+        }
+
+        /* ---------- 5. IMAGE PLACEHOLDER SYSTEM ----------
+       Every image sits in <figure class="media" data-size="W × H">.
+       - If the file at img[src] exists, it covers the placeholder.
+       - If it is missing, JS adds .is-missing and the tile shows the
+         filename + required size, so the page doubles as an image spec. */
+        .media {
+            --ph1: #DCE5FF;
+            --ph2: #ECE6FF;
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--r);
+            isolation: isolate;
+            background:
+                radial-gradient(110% 80% at 100% 0%, rgba(255, 255, 255, .75), transparent 55%),
+                repeating-linear-gradient(135deg, rgba(255, 255, 255, .32) 0 1px, transparent 1px 15px),
+                linear-gradient(140deg, var(--ph1), var(--ph2));
+        }
+
+        .media[data-tone="violet"] {
+            --ph1: #E6DEFF;
+            --ph2: #F4F0FF
+        }
+
+        .media[data-tone="sky"] {
+            --ph1: #D8ECFF;
+            --ph2: #E4E9FF
+        }
+
+        .media[data-tone="mix"] {
+            --ph1: #D6E0FF;
+            --ph2: #E9DEFF
+        }
+
+        .media img {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--ease);
+        }
+
+        .media.is-missing img {
+            display: none
+        }
+
+        .media::before,
+        .media::after {
+            position: absolute;
+            left: 50%;
+            z-index: 0;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            pointer-events: none;
+            font-family: var(--font);
+        }
+
+        .media::before {
+            content: attr(data-file);
+            bottom: 50%;
+            padding-top: 34px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234E5B8A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7.5h3.2L9 5h6l1.8 2.5H20a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z'/%3E%3Ccircle cx='12' cy='13' r='3.6'/%3E%3C/svg%3E") no-repeat top center / 26px;
+            font-size: .8rem;
+            font-weight: 600;
+            color: #3A4775;
+        }
+
+        .media::after {
+            content: attr(data-size);
+            top: calc(50% + 8px);
+            padding: 3px 11px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .78);
+            font-size: .74rem;
+            font-weight: 600;
+            color: var(--slate);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* label pinned to a corner when text overlays the image */
+        .media--label-corner::before {
+            left: auto;
+            right: 24px;
+            bottom: auto;
+            top: 22px;
+            transform: none;
+            padding-top: 0;
+            padding-left: 32px;
+            background-position: left center;
+            line-height: 26px
+        }
+
+        .media--label-corner::after {
+            left: auto;
+            right: 24px;
+            top: 56px;
+            transform: none
+        }
+
+        .media--zoom:hover img {
+            transform: scale(1.045)
+        }
+
+        /* ---------- 6. NAV & DRAWER ---------- */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 60;
+            background: rgba(246, 248, 252, .72);
+            backdrop-filter: blur(14px) saturate(150%);
+            -webkit-backdrop-filter: blur(14px) saturate(150%);
+            border-bottom: 1px solid transparent;
+            padding-top: env(safe-area-inset-top, 0px);
+            transition: background .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+        }
+
+        .nav.is-stuck {
+            background: rgba(255, 255, 255, .9);
+            border-bottom-color: var(--line);
+            box-shadow: 0 8px 24px -20px rgba(15, 27, 61, .35)
+        }
+
+        .nav__inner {
+            height: var(--nav-h);
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 2.6vw, 40px)
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0
+        }
+
+        .brand__mark {
+            width: 34px;
+            height: 34px
+        }
+
+        .brand__name {
+            display: block;
+            font-weight: 800;
+            letter-spacing: .04em;
+            font-size: 1.02rem;
+            line-height: 1;
+            color: var(--ink)
+        }
+
+        .brand__sub {
+            display: block;
+            margin-top: 4px;
+            font-size: .72rem;
+            font-weight: 500;
+            color: var(--slate);
+            line-height: 1;
+            letter-spacing: 0
+        }
+
+        .nav__links {
+            display: flex;
+            gap: clamp(14px, 1.7vw, 28px);
+            margin-left: auto
+        }
+
+        .nav__links a {
+            position: relative;
+            padding-block: 8px;
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--ink-2);
+            transition: color .2s var(--ease);
+            white-space: nowrap;
+        }
+
+        .nav__links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 2px;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .3s var(--ease);
+        }
+
+        .nav__links a:hover,
+        .nav__links a[aria-current="true"] {
+            color: var(--blue)
+        }
+
+        .nav__links a:hover::after,
+        .nav__links a[aria-current="true"]::after {
+            transform: scaleX(1)
+        }
+
+        .nav__progress {
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: 2px;
+            width: 100%;
+            background: var(--grad);
+            transform: scaleX(var(--p, 0));
+            transform-origin: 0 50%;
+        }
+
+        .burger {
+            display: none;
+            margin-left: auto;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            border: 1px solid var(--line-2);
+            background: var(--white);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .burger span,
+        .burger span::before,
+        .burger span::after {
+            display: block;
+            width: 18px;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--ink);
+            transition: transform .3s var(--ease), background .2s;
+        }
+
+        .burger span {
+            position: relative
+        }
+
+        .burger span::before,
+        .burger span::after {
+            content: "";
+            position: absolute;
+            left: 0
+        }
+
+        .burger span::before {
+            top: -6px
+        }
+
+        .burger span::after {
+            top: 6px
+        }
+
+        .burger[aria-expanded="true"] span {
+            background: transparent
+        }
+
+        .burger[aria-expanded="true"] span::before {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .burger[aria-expanded="true"] span::after {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        .drawer {
+            position: fixed;
+            inset: 0;
+            z-index: 55;
+            background: var(--white);
+            padding: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 20px) var(--pad) calc(28px + env(safe-area-inset-bottom, 0px));
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
+        }
+
+        .drawer.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: none
+        }
+
+        .drawer__links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px
+        }
+
+        .drawer__links a {
+            display: block;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .drawer__links a:hover {
+            color: var(--blue)
+        }
+
+        .drawer__cta {
+            display: grid;
+            gap: 10px
+        }
+
+        /* ---------- 7. HERO ---------- */
+        .hero {
+            position: relative;
+            padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(36px, 6vw, 72px));
+            padding-bottom: 0;
+            background:
+                radial-gradient(55% 60% at 88% 8%, rgba(106, 75, 234, .13), transparent 70%),
+                radial-gradient(50% 55% at 8% 0%, rgba(42, 92, 255, .12), transparent 70%),
+                var(--paper);
+            overflow-x: clip;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(rgba(42, 92, 255, .16) 1px, transparent 1.2px);
+            background-size: 26px 26px;
+            -webkit-mask-image: radial-gradient(60% 55% at 70% 30%, #000, transparent 75%);
+            mask-image: radial-gradient(60% 55% at 70% 30%, #000, transparent 75%);
+        }
+
+        .hero__grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+            gap: clamp(32px, 4.5vw, 64px);
+            align-items: center;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 16px 7px 8px;
+            border-radius: 999px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+            font-size: .86rem;
+            font-weight: 500;
+            color: var(--ink-2);
+        }
+
+        .pill b {
+            display: inline-grid;
+            place-items: center;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: var(--grad);
+            color: #fff;
+            font-size: .74rem;
+            font-weight: 600;
+        }
+
+        .hero__title {
+            margin-top: 26px;
+            font-size: var(--fs-hero);
+            letter-spacing: -.045em;
+            line-height: 1
+        }
+
+        .hero__title .t-event {
+            display: block;
+            font-weight: 800
+        }
+
+        .hero__title .t-edition {
+            display: block;
+            margin-top: .08em;
+            font-weight: 300;
+            color: var(--blue-700);
+            letter-spacing: -.035em
+        }
+
+        .hero__lede {
+            margin-top: 24px;
+            max-width: 56ch;
+            font-size: clamp(1.02rem, .98rem + .2vw, 1.12rem);
+            color: var(--slate);
+            line-height: 1.65
+        }
+
+        /* collage */
+        .collage {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .collage::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 78%;
+            aspect-ratio: 1;
+            right: -12%;
+            top: -12%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(106, 75, 234, .18), transparent 68%);
+        }
+
+        .c-main-wrap {
+            position: relative;
+            grid-column: 1 / -1
+        }
+
+        .collage .c-main {
+            aspect-ratio: 4 / 3;
+            border-radius: var(--r-lg)
+        }
+
+        .collage .c-side {
+            aspect-ratio: 4 / 3;
+            border-radius: var(--r)
+        }
+
+        /* signature: pilot → production card */
+        .theme-card {
+            position: absolute;
+            z-index: 3;
+            left: -36px;
+            top: -26px;
+            width: min(300px, 70%);
+            padding: 16px 18px 18px;
+            background: rgba(255, 255, 255, .94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-card small {
+            display: block;
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--slate)
+        }
+
+        .theme-card strong {
+            display: block;
+            margin-top: 2px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -.015em
+        }
+
+        .track {
+            position: relative;
+            margin-top: 16px;
+            height: 6px;
+            border-radius: 6px;
+            background: var(--blue-50)
+        }
+
+        .track i {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: var(--grad);
+            transform: scaleX(.08);
+            transform-origin: left;
+            transition: transform 1.8s cubic-bezier(.65, 0, .25, 1) .5s;
+        }
+
+        .track b {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            width: 16px;
+            height: 16px;
+            margin: -8px 0 0 -8px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--violet);
+            box-shadow: 0 0 0 4px rgba(106, 75, 234, .15);
+            transition: left 1.8s cubic-bezier(.65, 0, .25, 1) .5s;
+        }
+
+        .is-loaded .track i {
+            transform: scaleX(1)
+        }
+
+        .is-loaded .track b {
+            left: 100%
+        }
+
+        .track-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--ink-2)
+        }
+
+        /* quick facts strip */
+        .facts {
+            position: relative;
+            z-index: 4;
+            margin-top: clamp(48px, 6vw, 80px);
+            margin-bottom: -64px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .fact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 24px clamp(14px, 1.8vw, 26px)
+        }
+
+        .fact .icon-tile {
+            width: 42px;
+            height: 42px
+        }
+
+        .fact+.fact {
+            border-left: 1px solid var(--line)
+        }
+
+        .fact small {
+            display: block;
+            font-size: .8rem;
+            font-weight: 500;
+            color: var(--slate)
+        }
+
+        .fact strong {
+            display: block;
+            font-size: 1.02rem;
+            font-weight: 700;
+            letter-spacing: -.015em;
+            line-height: 1.3
+        }
+
+        /* ABOUT */
+        .about {
+            padding-top: calc(64px + clamp(72px, 9vw, 120px))
+        }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+            gap: clamp(40px, 6vw, 96px);
+            align-items: start;
+        }
+
+        .about__media {
+            position: sticky;
+            top: calc(var(--nav-h) + 32px);
+            padding: 0 16% 14% 0
+        }
+
+        .about__media .a-main {
+            aspect-ratio: 4 / 5;
+            border-radius: var(--r-lg)
+        }
+
+        .about__media .a-inset {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 46%;
+            aspect-ratio: 1;
+            border-radius: var(--r);
+            border: 8px solid var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge {
+            position: absolute;
+            z-index: 3;
+            left: -18px;
+            top: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px 12px 12px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .badge small {
+            display: block;
+            font-size: .76rem;
+            color: var(--slate);
+            line-height: 1.2
+        }
+
+        .badge strong {
+            display: block;
+            font-size: .95rem;
+            line-height: 1.25
+        }
+
+        .about__copy h2 {
+            font-size: var(--fs-h2)
+        }
+
+        .about__copy .lead {
+            margin-top: 22px
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--blue-50);
+            color: var(--blue-700);
+            font-size: .86rem;
+            font-weight: 600;
+        }
+
+        .chip .ic {
+            width: 16px;
+            height: 16px
+        }
+
+        .callout {
+            margin: 28px 0;
+            padding: 22px 26px;
+            border-radius: var(--r);
+            background: linear-gradient(120deg, var(--blue-50), var(--violet-50));
+            border-left: 4px solid var(--blue);
+            font-size: 1.12rem;
+            font-weight: 600;
+            letter-spacing: -.012em;
+            line-height: 1.5;
+            color: var(--ink);
+        }
+
+        .about__close {
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--ink)
+        }
+
+        /* ---------- 8. STATS ---------- */
+        .stats__grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(28px, 4vw, 56px);
+            align-items: stretch;
+        }
+
+        .stats__intro {
+            display: flex;
+            flex-direction: column;
+            gap: 22px
+        }
+
+        .statement {
+            font-size: clamp(1.3rem, 1.1rem + .7vw, 1.65rem);
+            font-weight: 600;
+            letter-spacing: -.024em;
+            line-height: 1.35;
+            color: var(--ink)
+        }
+
+        .stats__intro .media {
+            flex: 1;
+            min-height: 240px;
+            aspect-ratio: 16 / 10;
+            border-radius: var(--r-lg)
+        }
+
+        .stat-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--gap)
+        }
+
+        .stat {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 28px;
+            padding: clamp(22px, 2.6vw, 32px);
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-sm);
+            min-height: 210px;
+        }
+
+        .stat__num {
+            font-size: clamp(3rem, 2.2rem + 3vw, 4.6rem);
+            font-weight: 800;
+            letter-spacing: -.055em;
+            line-height: .95;
+            color: var(--blue);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat__num {
+            display: block
+        }
+
+        .stat__label {
+            display: block;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink-2);
+            line-height: 1.35
+        }
+
+        .stat--feature {
+            background: var(--grad);
+            border-color: transparent;
+            box-shadow: 0 24px 50px -24px rgba(78, 86, 240, .7)
+        }
+
+        .stat--feature .stat__num,
+        .stat--feature .stat__label {
+            color: #fff
+        }
+
+        .stat--feature .icon-tile {
+            background: rgba(255, 255, 255, .18);
+            color: #fff
+        }
+
+        /* ---------- 9. WHY ATTEND (bento) ---------- */
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: var(--gap);
+        }
+
+        .bento__img {
+            grid-row: span 2;
+            min-height: 100%;
+            border-radius: var(--r-lg)
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .feature:hover {
+            border-color: var(--blue-100);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px)
+        }
+
+        .feature h3 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: -.018em
+        }
+
+        .feature p {
+            font-size: var(--fs-small);
+            color: var(--slate);
+            line-height: 1.6
+        }
+
+        .bento__cta {
+            grid-column: span 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 22px;
+            padding: clamp(24px, 3vw, 36px);
+            border-radius: var(--r-lg);
+            background:
+                radial-gradient(80% 120% at 100% 0%, rgba(106, 75, 234, .16), transparent 60%),
+                linear-gradient(135deg, var(--blue-50), var(--violet-50));
+            border: 1px solid var(--blue-100);
+        }
+
+        .bento__cta p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.45;
+            letter-spacing: -.014em;
+            color: var(--ink);
+            max-width: 36ch
+        }
+
+        .bento__cta .icon-tile {
+            margin-bottom: 4px
+        }
+
+        /* ---------- 10. WHO SHOULD ATTEND ---------- */
+        .who {
+            display: grid;
+            grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+            gap: clamp(36px, 5vw, 80px);
+            align-items: start;
+        }
+
+        .who__aside {
+            position: sticky;
+            top: calc(var(--nav-h) + 28px)
+        }
+
+        .who__aside h2 {
+            font-size: var(--fs-h2)
+        }
+
+        .who__aside .lead {
+            margin-top: 20px
+        }
+
+        .who__aside .media {
+            margin-top: 30px;
+            aspect-ratio: 3 / 2;
+            border-radius: var(--r-lg)
+        }
+
+        .roles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .role {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            min-height: 86px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            font-weight: 600;
+            font-size: .96rem;
+            letter-spacing: -.01em;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+        }
+
+        .role:hover {
+            border-color: var(--blue-100);
+            box-shadow: var(--shadow)
+        }
+
+        .role .icon-tile {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px
+        }
+
+        .role .ic {
+            width: 20px;
+            height: 20px
+        }
+
+        .role--other {
+            background: transparent;
+            border-style: dashed;
+            color: var(--slate)
+        }
+
+        /* ---------- 11. GALLERY ---------- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .g-item {
+            position: relative;
+            margin: 0;
+            border-radius: var(--r);
+            overflow: hidden
+        }
+
+        .g-item .media {
+            position: absolute;
+            inset: 0;
+            border-radius: 0
+        }
+
+        .g-item--sm {
+            aspect-ratio: 4 / 3
+        }
+
+        .g-item--feature {
+            grid-column: span 2;
+            grid-row: span 2
+        }
+
+        .g-item--wide {
+            grid-column: span 2
+        }
+
+        .g-item figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            padding: 40px 18px 14px;
+            background: linear-gradient(180deg, transparent, rgba(15, 27, 61, .4) 40%, rgba(15, 27, 61, .82));
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: -.005em;
+            text-shadow: 0 1px 2px rgba(15, 27, 61, .5);
+        }
+
+        .g-item--feature figcaption {
+            font-size: 1.05rem;
+            padding: 40px 24px 20px
+        }
+
+        .g-item:hover .media img {
+            transform: scale(1.045)
+        }
+
+        /* ---------- 12. INDUSTRY ---------- */
+        .ind-wrap {
+            display: grid;
+            grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+            gap: var(--gap)
+        }
+
+        .ind__img {
+            min-height: 340px;
+            height: 100%;
+            border-radius: var(--r-lg)
+        }
+
+        .industries {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--gap)
+        }
+
+        .industry {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 22px;
+            min-height: 150px;
+            padding: 22px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+        }
+
+        .industry:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--blue-100)
+        }
+
+        .industry .icon-tile {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px
+        }
+
+        .industry .ic {
+            width: 24px;
+            height: 24px
+        }
+
+        .industry h3 {
+            font-size: 1.06rem;
+            font-weight: 700;
+            letter-spacing: -.016em;
+            line-height: 1.3
+        }
+
+        /* ---------- 13. TOPICS ---------- */
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--gap);
+        }
+
+        .topic {
+            --topic-tint: var(--blue-50);
+            --topic-ink: var(--blue);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 214px;
+            padding: 22px 22px 24px;
+            background:
+                radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--topic-tint) 88%, white) 0%, transparent 58%),
+                var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .topic::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--grad);
+            opacity: .9;
+        }
+
+        .topic:nth-child(3n+2) {
+            --topic-tint: var(--violet-50);
+            --topic-ink: var(--violet);
+        }
+
+        .topic:nth-child(3n) {
+            --topic-tint: var(--mist);
+            --topic-ink: var(--blue-700);
+        }
+
+        .topic:hover {
+            border-color: var(--blue-100);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+
+        .topic__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .topic__num {
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            color: var(--topic-ink);
+            font-variant-numeric: tabular-nums;
+            background: color-mix(in srgb, var(--topic-tint) 70%, white);
+            border: 1px solid color-mix(in srgb, var(--topic-ink) 14%, var(--line));
+            border-radius: 999px;
+            padding: 5px 10px;
+        }
+
+        .topic .icon-tile {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+        }
+
+        .topic__tag {
+            position: relative;
+            z-index: 1;
+            width: fit-content;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--topic-ink);
+            background: color-mix(in srgb, var(--topic-tint) 80%, white);
+            border-radius: 999px;
+            padding: 4px 10px;
+        }
+
+        .topic h3 {
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: -.018em;
+            line-height: 1.35;
+        }
+
+        .topic__mark {
+            position: absolute;
+            right: 6px;
+            bottom: -18px;
+            font-size: clamp(4.2rem, 6vw, 5.6rem);
+            font-weight: 800;
+            letter-spacing: -.08em;
+            line-height: 1;
+            color: var(--topic-ink);
+            opacity: .07;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .topic--cta {
+            --topic-tint: transparent;
+            --topic-ink: #fff;
+            background: var(--grad);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 24px 50px -26px rgba(78, 86, 240, .75);
+            justify-content: space-between;
+        }
+
+        .topic--cta::before {
+            background: rgba(255, 255, 255, .45);
+        }
+
+        .topic--cta .topic__num,
+        .topic--cta .topic__tag {
+            color: #fff;
+            background: rgba(255, 255, 255, .16);
+            border-color: rgba(255, 255, 255, .22);
+        }
+
+        .topic--cta .icon-tile {
+            background: rgba(255, 255, 255, .16);
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .topic--cta h3 {
+            color: #fff;
+            margin-top: 8px;
+        }
+
+        .topic--cta .topic__mark {
+            color: #fff;
+            opacity: .14;
+        }
+
+        .topic--cta .btn {
+            position: relative;
+            z-index: 1;
+            margin-top: 4px;
+            width: fit-content;
+        }
+
+        /* ---------- 14. SPEAKERS & LOGOS ---------- */
+        .speakers {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: var(--gap)
+        }
+
+        .spk {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .spk:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px)
+        }
+
+        .spk .media {
+            aspect-ratio: 4 / 5;
+            border-radius: 0
+        }
+
+        .spk:hover .media img {
+            transform: scale(1.04)
+        }
+
+        .spk__body {
+            padding: 18px 20px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        .spk__name {
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: -.018em
+        }
+
+        .spk__role {
+            font-size: .9rem;
+            color: var(--slate);
+            line-height: 1.45
+        }
+
+        .spk__co {
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--blue-700)
+        }
+
+        .spk__bio {
+            margin-top: 8px;
+            font-size: .88rem;
+            color: var(--slate);
+            line-height: 1.55
+        }
+
+        .logos-block {
+            margin-top: 0
+        }
+
+        .logos-block--featured {
+            margin-top: clamp(56px, 7vw, 88px)
+        }
+
+        .logos-block h3 {
+            font-size: var(--fs-h3);
+            letter-spacing: -.02em;
+            margin-bottom: 24px
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px
+        }
+
+        .logo-cell {
+            --logo-scale: 1;
+            position: relative;
+            display: grid;
+            place-items: center;
+            height: 116px;
+            padding: 18px 20px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .logo-cell:hover {
+            border-color: var(--blue-100);
+            box-shadow: var(--shadow);
+            transform: translateY(-2px)
+        }
+
+        .logo-cell img {
+            height: calc(var(--h, 34px) * var(--logo-scale));
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .logo-cell.is-missing img {
+            display: none
+        }
+
+        .logo-cell.is-missing::after {
+            content: attr(data-name);
+            font-weight: 700;
+            color: var(--slate);
+            text-align: center;
+            font-size: .92rem
+        }
+
+        /* INTERESTED IN SPEAKING */
+        .invite {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+            gap: clamp(28px, 4vw, 56px);
+            align-items: center;
+            padding: clamp(28px, 4.5vw, 64px);
+            border-radius: var(--r-xl);
+            background:
+                radial-gradient(60% 80% at 100% 0%, rgba(255, 255, 255, .18), transparent 60%),
+                radial-gradient(50% 70% at 0% 100%, rgba(255, 255, 255, .1), transparent 60%),
+                var(--grad);
+            color: #fff;
+            overflow: hidden;
+            box-shadow: 0 40px 80px -40px rgba(78, 86, 240, .7);
+        }
+
+        .invite h2 {
+            color: #fff;
+            font-size: var(--fs-h2)
+        }
+
+        .invite__lead {
+            margin-top: 20px;
+            font-size: var(--fs-lead);
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -.01em
+        }
+
+        .invite__body {
+            margin-top: 14px;
+            color: rgba(255, 255, 255, .88)
+        }
+
+        .invite .media {
+            aspect-ratio: 4 / 3;
+            border-radius: var(--r-lg);
+            box-shadow: 0 30px 60px -30px rgba(15, 27, 61, .6)
+        }
+
+        /* BECOME A SPONSOR */
+        .sponsor {
+            display: grid;
+            grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+            gap: clamp(36px, 5vw, 80px);
+            align-items: stretch;
+        }
+
+        .sponsor__media {
+            position: relative
+        }
+
+        .sponsor__media .media {
+            height: 100%;
+            min-height: 420px;
+            border-radius: var(--r-lg)
+        }
+
+        .sponsor__media .badge {
+            left: auto;
+            right: -18px;
+            top: auto;
+            bottom: 32px
+        }
+
+        .sponsor__copy h2 {
+            font-size: var(--fs-h2)
+        }
+
+        .sponsor__copy .lead {
+            margin-top: 20px
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 30px
+        }
+
+        .benefit {
+            padding: 22px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            transition: background .3s var(--ease), border-color .3s var(--ease);
+        }
+
+        .benefit:hover {
+            background: var(--white);
+            border-color: var(--blue-100)
+        }
+
+        .benefit h3 {
+            margin-top: 14px;
+            font-size: 1.04rem;
+            font-weight: 700;
+            letter-spacing: -.016em
+        }
+
+        .benefit p {
+            margin-top: 6px;
+            font-size: .92rem;
+            color: var(--slate);
+            line-height: 1.55
+        }
+
+        /* ---------- 15. 1-ON-1 MEETINGS ---------- */
+        .meet {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(36px, 5vw, 80px);
+            align-items: center;
+        }
+
+        .meet h2 {
+            font-size: var(--fs-h2)
+        }
+
+        .meet .lead {
+            margin-top: 20px
+        }
+
+        .meet__note {
+            margin-top: 18px;
+            font-weight: 600;
+            color: var(--ink)
+        }
+
+        .meet__media {
+            position: relative
+        }
+
+        .meet__media .media {
+            aspect-ratio: 4 / 3;
+            border-radius: var(--r-lg)
+        }
+
+        .meet__media::before {
+            content: "";
+            position: absolute;
+            inset: 18px -18px -18px 18px;
+            border-radius: var(--r-lg);
+            background: linear-gradient(135deg, rgba(42, 92, 255, .16), rgba(106, 75, 234, .22));
+        }
+
+        /* ---------- 16. ROUNDTABLES ---------- */
+        .rt__img {
+            aspect-ratio: 7 / 3;
+            border-radius: var(--r-xl)
+        }
+
+        .rt__card {
+            position: relative;
+            z-index: 2;
+            width: min(1060px, calc(100% - 2 * clamp(0px, 4vw, 48px)));
+            margin: calc(-1 * clamp(60px, 9vw, 140px)) auto 0;
+            padding: clamp(26px, 4vw, 52px);
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .rt__top {
+            display: grid;
+            grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+            gap: clamp(20px, 4vw, 56px);
+            align-items: start;
+        }
+
+        .rt__aside {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            min-width: 0;
+        }
+
+        .rt__top h2 {
+            font-size: var(--fs-h2)
+        }
+
+        .rt__inset {
+            aspect-ratio: 4 / 5;
+            border-radius: var(--r-lg);
+            min-height: 0;
+        }
+
+        .rt__inset img {
+            object-position: 50% 42%;
+        }
+
+        .rt__foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px 32px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding-top: 26px;
+            border-top: 1px solid var(--line);
+        }
+
+        .rt__foot p {
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -.012em;
+            max-width: 48ch
+        }
+
+        .rt__foot .btn {
+            margin: 0
+        }
+
+        /* ---------- 17. PACKAGES (tickets) ---------- */
+        .tickets {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(20px, 3vw, 32px);
+            max-width: 1000px;
+            margin-inline: auto
+        }
+
+        .ticket-wrap {
+            filter: drop-shadow(0 0 1px rgba(15, 27, 61, .22)) drop-shadow(0 8px 16px rgba(15, 27, 61, .07))
+        }
+
+        .ticket {
+            --cut: 176px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: var(--white);
+            border-radius: var(--r-lg);
+            -webkit-mask:
+                radial-gradient(circle 15px at 0 var(--cut), #0000 14px, #000 15px) left / 51% 100% no-repeat,
+                radial-gradient(circle 15px at 100% var(--cut), #0000 14px, #000 15px) right / 51% 100% no-repeat;
+            mask:
+                radial-gradient(circle 15px at 0 var(--cut), #0000 14px, #000 15px) left / 51% 100% no-repeat,
+                radial-gradient(circle 15px at 100% var(--cut), #0000 14px, #000 15px) right / 51% 100% no-repeat;
+        }
+
+        .ticket__stub {
+            height: var(--cut);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 26px 32px 24px;
+            border-bottom: 2px dashed var(--line-2);
+        }
+
+        .ticket__tag {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .ticket__tag h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -.02em
+        }
+
+        .ticket__price {
+            font-size: clamp(2.8rem, 2.3rem + 1.6vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -.05em;
+            line-height: 1;
+            font-variant-numeric: tabular-nums
+        }
+
+        .ticket__body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+            padding: 28px 32px 32px
+        }
+
+        .ticket__list {
+            display: grid;
+            gap: 12px
+        }
+
+        .ticket__list li {
+            display: flex;
+            gap: 12px;
+            font-size: .96rem;
+            color: var(--ink-2);
+            line-height: 1.5
+        }
+
+        .ticket__list .ic {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            color: var(--blue);
+            stroke-width: 2.2
+        }
+
+        .ticket__body .btn {
+            margin-top: auto
+        }
+
+        .ticket--feature .ticket__stub {
+            background:
+                radial-gradient(70% 120% at 100% 0%, rgba(255, 255, 255, .2), transparent 60%),
+                var(--grad);
+            color: #fff;
+            border-bottom-color: rgba(255, 255, 255, .0);
+        }
+
+        .ticket--feature .ticket__tag h3 {
+            color: #fff
+        }
+
+        .ticket--feature .ticket__body {
+            border-top: 2px dashed var(--line-2)
+        }
+
+        .ticket--feature .ticket__list .ic {
+            color: var(--violet)
+        }
+
+        /* ---------- 18. BLOG ---------- */
+        .posts {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--gap)
+        }
+
+        .post {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .post:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px)
+        }
+
+        .post .media {
+            aspect-ratio: 1600 / 838;
+            border-radius: 0
+        }
+
+        .post:hover .media img {
+            transform: scale(1.045)
+        }
+
+        .post__body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 22px 24px 26px
+        }
+
+        .post__cats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px
+        }
+
+        .post__cat {
+            align-self: flex-start;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: var(--violet-50);
+            color: var(--violet);
+            font-size: .8rem;
+            font-weight: 600
+        }
+
+        .post h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            line-height: 1.35
+        }
+
+        .post h3 a {
+            transition: color .2s var(--ease)
+        }
+
+        .post h3 a:hover {
+            color: var(--blue)
+        }
+
+        .post__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            font-size: .84rem;
+            font-weight: 500;
+            color: var(--slate-2)
+        }
+
+        .post p {
+            font-size: .94rem;
+            color: var(--slate);
+            line-height: 1.6
+        }
+
+        .post__more {
+            margin-top: auto;
+            padding-top: 6px;
+            font-weight: 600;
+            font-size: .92rem;
+            color: var(--blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .post__more:hover {
+            color: var(--blue-700);
+            text-decoration: underline;
+            text-underline-offset: 4px
+        }
+
+        /* ---------- 19. FINAL CTA ---------- */
+        .finale {
+            position: relative;
+            min-height: clamp(460px, 44vw, 560px);
+            display: flex;
+            align-items: center;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            color: #fff;
+            box-shadow: 0 40px 80px -40px rgba(42, 92, 255, .55);
+        }
+
+        .finale>.media {
+            position: absolute;
+            inset: 0;
+            border-radius: 0
+        }
+
+        .finale__overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(100deg, rgba(36, 81, 245, .95) 0%, rgba(70, 72, 236, .9) 50%, rgba(98, 74, 234, .55) 76%, rgba(106, 75, 234, .3) 100%);
+        }
+
+        .finale__content {
+            position: relative;
+            z-index: 2;
+            padding: clamp(32px, 5vw, 72px);
+            max-width: 820px
+        }
+
+        .finale h2 {
+            color: #fff;
+            font-size: var(--fs-h2)
+        }
+
+        .finale__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px
+        }
+
+        .finale__meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .14);
+            border: 1px solid rgba(255, 255, 255, .28);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .finale__meta .ic {
+            width: 17px;
+            height: 17px
+        }
+
+        .finale__venue {
+            margin-top: 18px;
+            color: rgba(255, 255, 255, .85);
+            font-size: .95rem
+        }
+
+        /* ---------- 20. FOOTER ---------- */
+        .foot {
+            background: var(--paper);
+            border-top: 1px solid var(--line);
+            padding-block: clamp(56px, 7vw, 88px) calc(28px + env(safe-area-inset-bottom, 0px));
+        }
+
+        .foot__top {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+            gap: clamp(28px, 4vw, 56px)
+        }
+
+        .foot__about {
+            margin-top: 18px;
+            max-width: 40ch;
+            font-size: .94rem;
+            color: var(--slate)
+        }
+
+        .foot h4 {
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: -.005em;
+            margin-bottom: 16px
+        }
+
+        .foot ul {
+            display: grid;
+            gap: 10px
+        }
+
+        .foot li a,
+        .foot li button {
+            font-size: .94rem;
+            color: var(--slate);
+            text-align: left;
+            transition: color .2s var(--ease)
+        }
+
+        .foot li a:hover,
+        .foot li button:hover {
+            color: var(--blue)
+        }
+
+        .social {
+            display: flex;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        .social a,
+        .social button {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--white);
+            border: 1px solid var(--line);
+            color: var(--ink-2);
+            transition: color .2s var(--ease), border-color .2s var(--ease);
+        }
+
+        .social a:hover,
+        .social button:hover {
+            color: var(--blue);
+            border-color: var(--blue)
+        }
+
+        .social .ic {
+            width: 18px;
+            height: 18px
+        }
+
+        .foot__bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: clamp(40px, 5vw, 64px);
+            padding-top: 22px;
+            border-top: 1px solid var(--line);
+            font-size: .86rem;
+            color: var(--slate-2);
+        }
+
+        .foot__bottom nav {
+            display: flex;
+            gap: 18px
+        }
+
+        .foot__bottom a:hover {
+            color: var(--blue)
+        }
+
+        /* ---------- 21. MODAL ---------- */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 90;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s var(--ease), visibility .25s;
+        }
+
+        .modal.is-open {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal__scrim {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 27, 61, .42);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px)
+        }
+
+        .modal__box {
+            position: relative;
+            width: min(500px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: clamp(26px, 4vw, 40px);
+            background: var(--white);
+            border-radius: var(--r-lg);
+            box-shadow: 0 40px 90px -30px rgba(15, 27, 61, .5);
+            transform: translateY(10px) scale(.985);
+            transition: transform .35s var(--ease);
+        }
+
+        .modal.is-open .modal__box {
+            transform: none
+        }
+
+        .modal__box::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 5px;
+            background: var(--grad)
+        }
+
+        .modal h3 {
+            font-size: 1.6rem;
+            letter-spacing: -.025em;
+            padding-right: 40px
+        }
+
+        .modal__copy {
+            margin-top: 8px;
+            color: var(--slate);
+            font-size: .95rem
+        }
+
+        .modal__close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            color: var(--slate);
+            transition: color .2s, border-color .2s;
+        }
+
+        .modal__close:hover {
+            color: var(--blue);
+            border-color: var(--blue)
+        }
+
+        .field {
+            display: block;
+            margin-top: 16px
+        }
+
+        .field span {
+            display: block;
+            margin-bottom: 6px;
+            font-size: .84rem;
+            font-weight: 600;
+            color: var(--ink-2)
+        }
+
+        .field input,
+        .field textarea,
+        .field select {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--paper);
+            border: 1.5px solid var(--line);
+            border-radius: var(--r-sm);
+            font: inherit;
+            font-size: .96rem;
+            color: var(--ink);
+            transition: border-color .2s var(--ease), background .2s var(--ease);
+        }
+
+        .field textarea {
+            min-height: 96px;
+            resize: vertical
+        }
+
+        .field input:focus,
+        .field textarea:focus,
+        .field select:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: var(--white)
+        }
+
+        .modal__error {
+            margin-top: 12px;
+            color: #C2323B;
+            font-size: .9rem;
+            font-weight: 500
+        }
+
+        .modal__note {
+            margin-top: 16px;
+            font-size: .8rem;
+            color: var(--slate-2);
+            line-height: 1.5
+        }
+
+        .modal__done {
+            margin-top: 18px;
+            padding: 16px 18px;
+            border-radius: var(--r-sm);
+            background: var(--blue-50);
+            color: var(--ink-2)
+        }
+
+        .modal__done strong {
+            display: block;
+            color: var(--blue-700)
+        }
+
+        /* ---------- 22. MOTION ---------- */
+        .rv {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .7s var(--ease), transform .7s var(--ease)
+        }
+
+        .rv.in {
+            opacity: 1;
+            transform: none
+        }
+
+        .rv-d1 {
+            transition-delay: .08s
+        }
+
+        .rv-d2 {
+            transition-delay: .16s
+        }
+
+        .hero-in>* {
+            opacity: 0;
+            transform: translateY(14px);
+            animation: heroIn .8s var(--ease) forwards
+        }
+
+        .hero-in> :nth-child(2) {
+            animation-delay: .08s
+        }
+
+        .hero-in> :nth-child(3) {
+            animation-delay: .16s
+        }
+
+        .hero-in> :nth-child(4) {
+            animation-delay: .24s
+        }
+
+        @keyframes heroIn {
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001ms !important;
+                animation-delay: 0s !important;
+                transition-duration: .001ms !important;
+                transition-delay: 0s !important
+            }
+
+            .rv,
+            .hero-in>* {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        /* ---------- 23. RESPONSIVE ---------- */
+        @media (max-width: 1180px) {
+            .bento {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .bento__img {
+                grid-row: span 2
+            }
+
+            .bento__cta {
+                grid-column: span 3
+            }
+
+            .speakers {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .foot__top {
+                grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, .8fr))
+            }
+        }
+
+        @media (max-width: 1080px) {
+
+            .nav__links,
+            .nav__cta {
+                display: none
+            }
+
+            .burger {
+                display: flex
+            }
+        }
+
+        @media (max-width: 960px) {
+
+            .hero__grid,
+            .about__grid,
+            .stats__grid,
+            .who,
+            .sponsor,
+            .meet,
+            .invite,
+            .rt__top,
+            .head--split {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .rt__inset {
+                aspect-ratio: 16 / 10;
+                max-height: 360px;
+            }
+
+            .hero__visual {
+                max-width: 640px
+            }
+
+            .theme-card {
+                left: 16px;
+                top: auto;
+                bottom: 16px
+            }
+
+            .facts {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .fact:nth-child(3) {
+                border-left: 0
+            }
+
+            .fact:nth-child(n+3) {
+                border-top: 1px solid var(--line)
+            }
+
+            .about__media {
+                max-width: 560px;
+                padding-right: 12%
+            }
+
+            .who__aside {
+                position: static
+            }
+
+            .who__aside .media {
+                aspect-ratio: 16 / 9
+            }
+
+            .stats__intro .media {
+                aspect-ratio: 16 / 9;
+                flex: none
+            }
+
+            .sponsor__media .media {
+                min-height: 0;
+                height: auto;
+                aspect-ratio: 16 / 10
+            }
+
+            .sponsor__media .badge {
+                right: 16px
+            }
+
+            .meet__media {
+                order: -1
+            }
+
+            .meet__media::before {
+                inset: 12px -12px -12px 12px
+            }
+
+            .bento {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .bento__img {
+                grid-column: span 2;
+                grid-row: auto;
+                aspect-ratio: 16 / 9;
+                min-height: 0
+            }
+
+            .bento__cta {
+                grid-column: span 2
+            }
+
+            .topics,
+            .posts {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .ind-wrap {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .ind__img {
+                min-height: 0;
+                height: auto;
+                aspect-ratio: 16 / 9
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                grid-auto-flow: row dense
+            }
+
+            .about__media {
+                position: relative;
+                top: auto
+            }
+
+            .g-item--feature {
+                grid-row: auto;
+                aspect-ratio: 16 / 10
+            }
+
+            .g-item--wide {
+                aspect-ratio: 2 / 1
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .rt__img {
+                aspect-ratio: 16 / 9
+            }
+
+            .foot__top {
+                grid-template-columns: 1fr 1fr 1fr
+            }
+
+            .foot__brand {
+                grid-column: 1 / -1
+            }
+        }
+
+        @media (max-width: 700px) {
+            .speakers {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px
+            }
+
+            .spk__body {
+                padding: 14px 14px 18px
+            }
+
+            .spk__name {
+                font-size: 1rem
+            }
+
+            .spk__role,
+            .spk__co {
+                font-size: .84rem
+            }
+
+            .tickets {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+        }
+
+        @media (max-width: 640px) {
+            :root {
+                --nav-h: 64px
+            }
+
+            .brand__sub {
+                display: none
+            }
+
+            .hero__title {
+                letter-spacing: -.04em
+            }
+
+            .actions {
+                flex-direction: column;
+                align-items: stretch
+            }
+
+            .actions .btn {
+                width: 100%
+            }
+
+            .collage {
+                gap: 10px
+            }
+
+            .theme-card {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                width: auto;
+                margin-top: 10px;
+                box-shadow: var(--shadow)
+            }
+
+            .facts {
+                grid-template-columns: minmax(0, 1fr);
+                margin-bottom: -48px
+            }
+
+            .fact {
+                padding: 16px 18px
+            }
+
+            .fact+.fact {
+                border-left: 0;
+                border-top: 1px solid var(--line)
+            }
+
+            .about {
+                padding-top: calc(48px + 64px)
+            }
+
+            .about__media {
+                padding: 0 10% 18% 0
+            }
+
+            .badge {
+                left: 12px;
+                top: 12px
+            }
+
+            .stat-cards {
+                gap: 10px
+            }
+
+            .stat {
+                min-height: 170px;
+                padding: 18px;
+                gap: 18px
+            }
+
+            .stat .icon-tile {
+                width: 38px;
+                height: 38px
+            }
+
+            .stat__label {
+                font-size: .9rem
+            }
+
+            .bento,
+            .topics,
+            .posts,
+            .benefits {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .industries {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px
+            }
+
+            .industry {
+                min-height: 124px;
+                padding: 16px;
+                gap: 16px
+            }
+
+            .industry h3 {
+                font-size: .96rem
+            }
+
+            .industry:last-child:nth-child(odd) {
+                grid-column: span 2
+            }
+
+            .bento__img,
+            .bento__cta {
+                grid-column: auto
+            }
+
+            .bento__img {
+                aspect-ratio: 4 / 3
+            }
+
+            .roles {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 8px
+            }
+
+            .role {
+                min-height: 64px;
+                padding: 11px 14px
+            }
+
+            .topic {
+                min-height: 0;
+                gap: 12px;
+                padding: 18px
+            }
+
+            .topic__mark {
+                font-size: 4rem;
+                bottom: -14px
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px
+            }
+
+            .logo-cell {
+                height: 96px;
+                --logo-scale: .82
+            }
+
+            .invite {
+                border-radius: var(--r-lg)
+            }
+
+            .rt__img {
+                aspect-ratio: 4 / 3;
+                border-radius: var(--r-lg)
+            }
+
+            .rt__card {
+                width: calc(100% - 20px);
+                margin-top: -48px;
+                border-radius: var(--r-lg)
+            }
+
+            .ticket {
+                --cut: 164px
+            }
+
+            .ticket__stub {
+                padding: 22px 22px 20px
+            }
+
+            .ticket__body {
+                padding: 22px 22px 24px
+            }
+
+            .finale {
+                border-radius: var(--r-lg);
+                align-items: flex-end
+            }
+
+            .finale__overlay {
+                background: linear-gradient(180deg, rgba(36, 81, 245, .2) 0%, rgba(50, 76, 240, .7) 24%, rgba(58, 74, 238, .94) 44%, rgba(78, 70, 232, .97) 100%)
+            }
+
+            .finale__content {
+                padding-top: 180px
+            }
+
+            .foot__top {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .drawer__links {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .media::before {
+                font-size: .72rem
+            }
+
+            .media::after {
+                font-size: .68rem
+            }
+
+            .modal {
+                padding: 12px;
+                align-items: end
+            }
+
+            .btn {
+                white-space: normal;
+                text-align: center
+            }
+
+            .rt__foot .btn {
+                width: 100%
+            }
+
+            .g-item--sm figcaption {
+                display: none
+            }
+
+            .topic {
+                padding: 16px 16px 18px
+            }
+
+            .topic h3 {
+                font-size: 1rem
+            }
+
+            .topic--cta .btn {
+                width: 100%
+            }
+
+            .posts {
+                grid-template-columns: none;
+                grid-auto-flow: column;
+                grid-auto-columns: 86%;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                overscroll-behavior-x: contain;
+                margin-inline: calc(-1 * var(--pad));
+                padding: 4px var(--pad) 18px;
+                scroll-padding-inline: var(--pad);
+                scrollbar-width: none;
+            }
+
+            .posts::-webkit-scrollbar {
+                display: none
+            }
+
+            .post {
+                scroll-snap-align: start
+            }
+
+            .post:hover {
+                transform: none
+            }
+
+            .modal__box {
+                border-radius: var(--r-lg) var(--r-lg) var(--r) var(--r)
+            }
+        }
+
+        @media print {
+
+            .nav,
+            .drawer,
+            .modal {
+                display: none !important
+            }
+
+            .rv,
+            .hero-in>* {
+                opacity: 1 !important;
+                transform: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ================= ICON SPRITE ================= -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-calendar" viewBox="0 0 24 24">
+                <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+                <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
+            </symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.5 2" />
+            </symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24">
+                <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" />
+                <circle cx="12" cy="9.5" r="2.5" />
+            </symbol>
+            <symbol id="i-mic" viewBox="0 0 24 24">
+                <rect x="9" y="3" width="6" height="11" rx="3" />
+                <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" />
+            </symbol>
+            <symbol id="i-users" viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3.5" />
+                <path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8" />
+            </symbol>
+            <symbol id="i-sessions" viewBox="0 0 24 24">
+                <rect x="3" y="3.5" width="18" height="12" rx="2" />
+                <path d="M12 15.5V20M8 21l4-1 4 1M7 11l3-3 2.5 2.5L17 7" />
+            </symbol>
+            <symbol id="i-globe" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" />
+            </symbol>
+            <symbol id="i-layers" viewBox="0 0 24 24">
+                <path d="M12 3 2.5 8 12 13l9.5-5L12 3z" />
+                <path d="m2.5 12 9.5 5 9.5-5M2.5 16l9.5 5 9.5-5" />
+            </symbol>
+            <symbol id="i-rocket" viewBox="0 0 24 24">
+                <path d="M5 15c-1.5 1.3-2 4.5-2 6 1.5 0 4.7-.5 6-2" />
+                <path d="M9 15l-3-3c1-3 3.5-6.5 7.5-8.5 2-1 4.5-1.5 7-1.5 0 2.5-.5 5-1.5 7-2 4-5.5 6.5-8.5 7.5z" />
+                <circle cx="15" cy="9" r="1.8" />
+            </symbol>
+            <symbol id="i-plug" viewBox="0 0 24 24">
+                <path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8zM12 17v4" />
+            </symbol>
+            <symbol id="i-gauge" viewBox="0 0 24 24">
+                <path d="M3.5 17.5a8.5 8.5 0 1 1 17 0" />
+                <path d="M12 17.5l4.2-5.2" />
+                <circle cx="12" cy="17.5" r="1.4" />
+            </symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24">
+                <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6L12 3z" />
+                <path d="m8.8 12 2.2 2.2 4.2-4.4" />
+            </symbol>
+            <symbol id="i-network" viewBox="0 0 24 24">
+                <circle cx="12" cy="5" r="2.5" />
+                <circle cx="5" cy="18" r="2.5" />
+                <circle cx="19" cy="18" r="2.5" />
+                <path d="M10.8 7.2 6.3 15.8M13.2 7.2l4.5 8.6M7.5 18h9" />
+            </symbol>
+            <symbol id="i-book" viewBox="0 0 24 24">
+                <path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2V5z" />
+                <path d="M4 20a2 2 0 0 0 2 2h13v-4M8.5 7.5h6M8.5 11h4" />
+            </symbol>
+            <symbol id="i-balance" viewBox="0 0 24 24">
+                <path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3.2 3.2 0 0 0 6 0L5 7zM19 7l-3 7a3.2 3.2 0 0 0 6 0l-3-7z" />
+            </symbol>
+            <symbol id="i-store" viewBox="0 0 24 24">
+                <path d="M3.5 9 5 4h14l1.5 5M3.5 9a2.8 2.8 0 0 0 5.6 0 2.9 2.9 0 0 0 5.8 0 2.8 2.8 0 0 0 5.6 0M5 11.5V20h14v-8.5M10 20v-4.5h4V20" />
+            </symbol>
+            <symbol id="i-cpu" viewBox="0 0 24 24">
+                <rect x="6" y="6" width="12" height="12" rx="2" />
+                <rect x="9.5" y="9.5" width="5" height="5" rx="1" />
+                <path d="M9 2.5V6M15 2.5V6M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5" />
+            </symbol>
+            <symbol id="i-sparkle" viewBox="0 0 24 24">
+                <path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8L11 3z" />
+                <path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" />
+            </symbol>
+            <symbol id="i-building" viewBox="0 0 24 24">
+                <path d="M4 21V5.5L12 3v18M12 21V8.5l8 2.5V21M2.5 21h19M7 8h2M7 11.5h2M7 15h2M15 13.5h2M15 17h2" />
+            </symbol>
+            <symbol id="i-terminal" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="16" rx="2.5" />
+                <path d="m7.5 9.5 3 2.5-3 2.5M12.5 15h4" />
+            </symbol>
+            <symbol id="i-chart" viewBox="0 0 24 24">
+                <path d="M4 4v16h16M8.5 16v-4M12.5 16V8M16.5 16v-6" />
+            </symbol>
+            <symbol id="i-refresh" viewBox="0 0 24 24">
+                <path d="M20 11a8 8 0 0 0-14.3-4.3L3.5 9M4 13a8 8 0 0 0 14.3 4.3l2.2-2.3M3.5 4.5V9H8M20.5 19.5V15H16" />
+            </symbol>
+            <symbol id="i-box" viewBox="0 0 24 24">
+                <path d="M12 3 3.5 7.5v9L12 21l8.5-4.5v-9L12 3z" />
+                <path d="M3.5 7.5 12 12l8.5-4.5M12 12v9" />
+            </symbol>
+            <symbol id="i-workflow" viewBox="0 0 24 24">
+                <rect x="3" y="3.5" width="7" height="6" rx="1.5" />
+                <rect x="14" y="14.5" width="7" height="6" rx="1.5" />
+                <path d="M6.5 9.5V14a3 3 0 0 0 3 3H14" />
+            </symbol>
+            <symbol id="i-cloud" viewBox="0 0 24 24">
+                <path d="M7 19h10.5a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.4 9.1 5 5 0 0 0 7 19z" />
+            </symbol>
+            <symbol id="i-compass" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="m15.5 8.5-2 5-5 2 2-5 5-2z" />
+            </symbol>
+            <symbol id="i-headset" viewBox="0 0 24 24">
+                <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+                <rect x="3" y="13.5" width="4" height="6" rx="1.5" />
+                <rect x="17" y="13.5" width="4" height="6" rx="1.5" />
+                <path d="M19 19.5a3.5 3.5 0 0 1-3.5 2H13" />
+            </symbol>
+            <symbol id="i-cart" viewBox="0 0 24 24">
+                <path d="M3 4h2.2l2.3 11h10.8l2-8H6.2" />
+                <circle cx="9" cy="19.5" r="1.4" />
+                <circle cx="17" cy="19.5" r="1.4" />
+            </symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 8v8M8 12h8" />
+            </symbol>
+            <symbol id="i-code" viewBox="0 0 24 24">
+                <path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15" />
+            </symbol>
+            <symbol id="i-bank" viewBox="0 0 24 24">
+                <path d="M3 9.5 12 4l9 5.5M4.5 9.5h15M6 10v7M10 10v7M14 10v7M18 10v7M3 20.5h18M4 17.5h16" />
+            </symbol>
+            <symbol id="i-heart" viewBox="0 0 24 24">
+                <path d="M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" />
+                <path d="M6.8 12.5h2.7l1.5-2.5 2 4 1.5-1.5h2.7" />
+            </symbol>
+            <symbol id="i-bag" viewBox="0 0 24 24">
+                <path d="M5 8h14l-1 12.5H6L5 8z" />
+                <path d="M9 10V6.5a3 3 0 0 1 6 0V10" />
+            </symbol>
+            <symbol id="i-antenna" viewBox="0 0 24 24">
+                <path d="M12 12v9M9 21h6" />
+                <circle cx="12" cy="10" r="1.8" />
+                <path d="M8.2 6.2a5.4 5.4 0 0 0 0 7.6M15.8 6.2a5.4 5.4 0 0 1 0 7.6M5.4 3.4a9.4 9.4 0 0 0 0 13.2M18.6 3.4a9.4 9.4 0 0 1 0 13.2" />
+            </symbol>
+            <symbol id="i-factory" viewBox="0 0 24 24">
+                <path d="M3 21V11l5 3v-3l5 3v-3l5 3V4h3v17H3z" />
+                <path d="M7 17.5h2M12 17.5h2" />
+            </symbol>
+            <symbol id="i-umbrella" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 0 1 18 0H3z" />
+                <path d="M12 12v6.5a2 2 0 0 1-4 0" />
+            </symbol>
+            <symbol id="i-briefcase" viewBox="0 0 24 24">
+                <rect x="3" y="7" width="18" height="13" rx="2" />
+                <path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18M11 12.5v2h2v-2" />
+            </symbol>
+            <symbol id="i-award" viewBox="0 0 24 24">
+                <circle cx="12" cy="9" r="6" />
+                <path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7" />
+            </symbol>
+            <symbol id="i-megaphone" viewBox="0 0 24 24">
+                <path d="M3 10v4h3l8 5V5L6 10H3z" />
+                <path d="M17.5 8.5a5 5 0 0 1 0 7M6 14l1.5 6h3L9 15.5" />
+            </symbol>
+            <symbol id="i-trend" viewBox="0 0 24 24">
+                <path d="M3 17l6-6 4 4 8-8M15 7h6v6" />
+            </symbol>
+            <symbol id="i-check" viewBox="0 0 24 24">
+                <path d="m5 12.5 4.5 4.5L19 7.5" />
+            </symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
+                <path d="m3 6 9 6 9-6" />
+            </symbol>
+            <symbol id="i-close" viewBox="0 0 24 24">
+                <path d="M6 6l12 12M18 6 6 18" />
+            </symbol>
+            <symbol id="i-chat" viewBox="0 0 24 24">
+                <path d="M4 5h16v11H9l-5 4V5z" />
+                <path d="M8 9.5h8M8 12.5h5" />
+            </symbol>
+            <symbol id="i-linkedin" viewBox="0 0 24 24">
+                <path fill="currentColor" stroke="none" d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.83-2.06 3.76-2.06 4 0 4.74 2.5 4.74 5.76V21H17.6v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.46-2.2 2.96V21H9z" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- ================= NAV ================= -->
+    <header class="nav" id="nav">
+        <div class="container nav__inner">
+            <a class="brand" href="#top" aria-label="NexGen Agentic AI Summit, back to top">
+                <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+                    <circle cx="20" cy="20" r="18.5" fill="none" stroke="#6A4BEA" stroke-width="1.2" opacity=".35" />
+                    <circle cx="20" cy="20" r="12.5" fill="none" stroke="#2A5CFF" stroke-width="1.6" opacity=".7" />
+                    <circle cx="20" cy="20" r="5.5" fill="#2A5CFF" />
+                    <circle cx="32.5" cy="20" r="2.6" fill="#6A4BEA" />
+                    <circle cx="11" cy="9.5" r="2.2" fill="#4E56F0" />
+                    <circle cx="9.5" cy="28.5" r="2" fill="#2A5CFF" />
+                </svg>
+                <span><span class="brand__name">NEXGEN</span><span class="brand__sub">Agentic AI Summit, London</span></span>
+            </a>
+            <nav aria-label="Primary">
+                <ul class="nav__links" id="navlinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why">Why Attend</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#sponsor">Sponsorship</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                </ul>
+            </nav>
+            <button class="btn btn--primary btn--sm nav__cta" type="button" data-modal="register">Register as Delegate</button>
+            <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+        </div>
+        <span class="nav__progress" id="nav-progress" aria-hidden="true"></span>
+    </header>
+
+    <div class="drawer" id="drawer" inert>
+        <nav aria-label="Mobile">
+            <ul class="drawer__links">
+                <li><a href="#about">About the Event</a></li>
+                <li><a href="#why">Why Attend</a></li>
+                <li><a href="#attend">Who Should Attend</a></li>
+                <li><a href="#highlights">Event Highlights</a></li>
+                <li><a href="#industry">Industry</a></li>
+                <li><a href="#topics">Topics We Cover</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#sponsor">Become a Sponsor</a></li>
+                <li><a href="#meetings">1-on-1 Meetings</a></li>
+                <li><a href="#roundtables">Roundtables</a></li>
+                <li><a href="#packages">Registration Packages</a></li>
+            </ul>
+        </nav>
+        <div class="drawer__cta">
+            <button class="btn btn--primary btn--block" type="button" data-modal="register">Register as Delegate</button>
+            <button class="btn btn--outline btn--block" type="button" data-modal="sponsor">Become a Sponsor</button>
+        </div>
+    </div>
+
+    <main id="main">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero__grid">
+                    <div class="hero-in">
+                        <p class="pill"><b>Theme</b>Taking agentic AI from promise to production, the UK way</p>
+                        <h1 class="hero__title" id="hero-title">
+                            <span class="t-event">NexGen Agentic AI Summit</span>
+                            <span class="t-edition">London 2027</span>
+                        </h1>
+                        <p class="hero__lede">Businesses are racing to put AI agents to work, from banks in the City to hospitals, retailers and public services. But a working demo is not a dependable system. This summit is about the hard part: getting autonomous AI past the pilot stage while meeting UK regulatory expectations, protecting customer data and proving real returns.</p>
+                        <div class="actions">
+                            <button class="btn btn--primary" type="button" data-modal="sponsor">Become a Sponsor</button>
+                            <button class="btn btn--outline" type="button" data-modal="register">Register as Delegate</button>
+                            <button class="btn btn--quiet" type="button" data-modal="agenda">Request Agenda</button>
+                        </div>
+                    </div>
+
+                    <div class="hero__visual">
+                        <div class="collage">
+                            <div class="c-main-wrap">
+                                <!-- REPLACE: hero-main.jpg 1600 × 1200 (4:3) -->
+                                <figure class="media c-main" data-tone="mix" data-size="1600 × 1200 · 4:3">
+                                    <img src="assets/images/Hero Main.png" alt="Keynote speaker addressing enterprise leaders on the summit main stage" fetchpriority="high">
+                                </figure>
+                                <div class="theme-card" aria-label="Summit theme: from pilot to production">
+                                    <small>Summit theme</small>
+                                    <strong>Taking agentic AI from promise to production, the UK way</strong>
+                                    <div class="track" aria-hidden="true"><i></i><b></b></div>
+                                    <div class="track-labels" aria-hidden="true"><span>Pilot</span><span>Production</span></div>
+                                </div>
+                            </div>
+                            <!-- REPLACE: hero-side-1.jpg 900 × 675 (4:3) -->
+                            <figure class="media c-side" data-tone="sky" data-size="900 × 675 · 4:3">
+                                <img src="assets/images/Hero Side 1.png" alt="Delegates in conversation during a networking break">
+                            </figure>
+                            <!-- REPLACE: hero-side-2.jpg 900 × 675 (4:3) -->
+                            <figure class="media c-side" data-tone="violet" data-size="900 × 675 · 4:3">
+                                <img src="assets/images/Hero Side 2.png" alt="Panel discussion with enterprise AI leaders on stage">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick facts strip (content doc) -->
+                <div class="facts" role="list" aria-label="Event details">
+                    <div class="fact" role="listitem">
+                        <span class="icon-tile"><svg class="ic">
+                                <use href="#i-calendar" />
+                            </svg></span>
+                        <div><small>Conference Date</small><strong>3rd June 2027</strong></div>
+                    </div>
+                    <div class="fact" role="listitem">
+                        <span class="icon-tile"><svg class="ic">
+                                <use href="#i-clock" />
+                            </svg></span>
+                        <div><small>Conference Time</small><strong>09:00 HRS BST</strong></div>
+                    </div>
+                    <div class="fact" role="listitem">
+                        <span class="icon-tile icon-tile--violet"><svg class="ic">
+                                <use href="#i-pin" />
+                            </svg></span>
+                        <div><small>Location</small><strong>London, United Kingdom</strong></div>
+                    </div>
+                    <div class="fact" role="listitem">
+                        <span class="icon-tile icon-tile--violet"><svg class="ic">
+                                <use href="#i-mic" />
+                            </svg></span>
+                        <div><small>Speakers</small><strong>25+ Expert Speakers</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="section section--white about" id="about" aria-labelledby="about-title">
+            <div class="container about__grid">
+                <div class="about__media rv">
+                    <!-- REPLACE: about-main.jpg 1200 × 1500 (4:5) -->
+                    <figure class="media a-main" data-tone="mix" data-size="1200 × 1500 · 4:5">
+                        <img src="assets/images/About The Event 1.png" alt="Enterprise AI leaders in a focused discussion at the summit" loading="lazy">
+                    </figure>
+                    <!-- REPLACE: about-inset.jpg 800 × 800 (1:1) -->
+                    <figure class="media a-inset" data-tone="sky" data-size="800 × 800 · 1:1">
+                        <img src="assets/images/About The Event 2.png" alt="Close-up of an attendee taking notes during a session" loading="lazy">
+                    </figure>
+                    <div class="badge">
+                        <span class="icon-tile icon-tile--solid"><svg class="ic">
+                                <use href="#i-users" />
+                            </svg></span>
+                        <div><small>In-person event</small><strong>London Edition</strong></div>
+                    </div>
+                </div>
+
+                <div class="about__copy rv rv-d1">
+                    <h2 id="about-title">About The Event</h2>
+                    <p class="lead">The NexGen Agentic AI Summit, London Edition, is a one-day, in-person gathering for the people responsible for making AI agents work inside UK organisations. It covers the full journey, from choosing the right use case to running agents safely at scale.</p>
+                    <ul class="chips" aria-label="Focus areas">
+                        <li class="chip"><svg class="ic">
+                                <use href="#i-layers" />
+                            </svg>Strategy</li>
+                        <li class="chip"><svg class="ic">
+                                <use href="#i-workflow" />
+                            </svg>Engineering</li>
+                        <li class="chip"><svg class="ic">
+                                <use href="#i-shield" />
+                            </svg>Regulation</li>
+                        <li class="chip"><svg class="ic">
+                                <use href="#i-trend" />
+                            </svg>Results</li>
+                    </ul>
+                    <p class="body" style="margin-top:26px">AI agents no longer just draft text or answer questions. They book, approve, reconcile, escalate and decide. That shift raises questions that boards, regulators and customers are all asking: Who is accountable when an agent gets it wrong? How do we show the FCA, ICO or our own auditors what the agent did and why? And does it actually pay for itself?</p>
+                    <p class="callout">London is where many of these questions are being answered first. The UK combines a world-leading financial services sector, a large public-sector estate, a strong AI research base and a regulatory approach that favours principles and accountability over rigid rules. Organisations trading into Europe must also reckon with the EU AI Act.</p>
+                    <p class="body">This summit brings leaders together to share what has worked, what has failed and what it really took to get there. Expect frank case studies, technical deep dives and practical frameworks you can take back to your team on Monday morning.</p>
+                    <p class="about__close">Join UK leaders and practitioners as they define what it takes to put dependable agentic AI to work.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STATS ================= -->
+        <section class="section section--mist" id="stats" aria-label="Summit in numbers">
+            <div class="container stats__grid">
+                <div class="stats__intro rv">
+                    <p class="statement">Join the NexGen Agentic AI Summit, London Edition, and be part of practical conversations about putting agentic AI to work across UK organisations.</p>
+                    <p class="body">This exclusive, in-person gathering brings together enterprise AI leaders, engineering heads, and operations executives to explore what it actually takes to move agentic AI from pilot to production.</p>
+                    <!-- REPLACE: stats-audience.jpg 1600 × 1000 (16:10) -->
+                    <figure class="media" data-tone="sky" data-size="1600 × 1000 · 16:10">
+                        <img src="assets/images/Join the NexGen Agentic AI Summit.png" alt="Full conference hall of senior delegates during a keynote" loading="lazy">
+                    </figure>
+                </div>
+                <div class="stat-cards rv rv-d1" id="stat-cards"></div>
+            </div>
+        </section>
+
+        <!-- ================= WHY ATTEND ================= -->
+        <section class="section section--white" id="why" aria-labelledby="why-title">
+            <div class="container">
+                <div class="head head--split rv">
+                    <div>
+                        <h2 id="why-title">Why Attend?</h2>
+                        <p class="subhead">Learn how UK organisations are making agentic AI stick</p>
+                    </div>
+                    <div>
+                        <p class="body">A full day of practical UK case studies, regulatory guidance, engineering insight and candid discussion about value, security and change.</p>
+                    </div>
+                </div>
+
+                <div class="bento rv rv-d1" id="why-grid">
+                    <!-- REPLACE: why-attend.jpg 1000 × 1500 (2:3) -->
+                    <figure class="media bento__img" data-tone="violet" data-size="1000 × 1500 · 2:3">
+                        <img src="assets/images/Why Attend.png" alt="Engineering leaders comparing notes after a technical session" loading="lazy">
+                    </figure>
+                    <!-- feature cards injected by JS (CONTENT.why) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WHO SHOULD ATTEND ================= -->
+        <section class="section section--paper" id="attend" aria-labelledby="attend-title">
+            <div class="container who">
+                <div class="who__aside rv">
+                    <h2 id="attend-title">Who Should Attend?</h2>
+                    <p class="lead">Designed for leaders and practitioners in AI, technology, risk and operations across UK enterprises and public bodies, including CTOs, CIOs, CAIOs, CISOs, Chief Data Officers, Directors, Heads and senior specialists in:</p>
+                    <!-- REPLACE: who-attend.jpg 1500 × 1000 (3:2) -->
+                    <figure class="media" data-tone="mix" data-size="1500 × 1000 · 3:2">
+                        <img src="assets/images/Who Should Attend.png" alt="Senior technology executives networking at the summit" loading="lazy">
+                    </figure>
+                </div>
+                <ul class="roles rv rv-d1" id="roles"></ul>
+            </div>
+        </section>
+
+        <!-- ================= EVENT HIGHLIGHTS ================= -->
+        <section class="section section--white" id="highlights" aria-labelledby="hl-title">
+            <div class="container">
+                <div class="head rv">
+                    <h2 id="hl-title">Event Highlights</h2>
+                </div>
+                <div class="gallery rv rv-d1" id="gallery"></div>
+            </div>
+        </section>
+
+        <!-- ================= INDUSTRY ================= -->
+        <section class="section section--mist" id="industry" aria-labelledby="ind-title">
+            <div class="container">
+                <div class="head rv">
+                    <h2 id="ind-title">Industries</h2>
+                </div>
+                <div class="ind-wrap">
+                    <!-- REPLACE: industry.jpg 1200 × 1200 (1:1, cropped to fill; keep subject centered) -->
+                    <figure class="media ind__img rv" data-tone="violet" data-size="1200 × 1200 · 1:1">
+                        <img src="assets/images/WhatsApp Image 2026-09-30 at 1.18.18 PM (1).jpeg" alt="Cross-industry enterprise leaders in discussion" loading="lazy">
+                    </figure>
+                    <ul class="industries rv rv-d1" id="industries"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TOPICS ================= -->
+        <section class="section section--lilac" id="topics" aria-labelledby="topics-title">
+            <div class="container">
+                <div class="head rv">
+                    <h2 id="topics-title">Topics We Cover</h2>
+                    <p>From architecture and orchestration to security, governance, and ROI — the sessions map the path from agentic pilots to production systems.</p>
+                </div>
+                <ol class="topics rv rv-d1" id="topics-list"></ol>
+            </div>
+        </section>
+
+        <!-- ================= SPEAKERS ================= -->
+        <section class="section section--paper" id="speakers" aria-labelledby="spk-title">
+            <div class="container">
+                <div class="head rv">
+                    <h2 id="spk-title">Speakers</h2>
+                </div>
+                <div class="logos-block rv rv-d1">
+                    <ul class="logo-grid" id="logo-grid" aria-label="Organizations represented by speakers"></ul>
+                </div>
+                <div class="logos-block logos-block--featured rv">
+                    <h3>Featured organisations</h3>
+                    <ul class="logo-grid" id="org-grid" aria-label="Featured organisation logos"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INTERESTED IN SPEAKING ================= -->
+        <section class="section section--paper" id="speak" aria-labelledby="speak-title" style="padding-top:0">
+            <div class="container">
+                <div class="invite rv">
+                    <div>
+                        <h2 id="speak-title">Interested in Speaking?</h2>
+                        <p class="invite__lead">Have a deployment story worth sharing? Join the NexGen Agentic AI Summit, London Edition, and tell a room of UK decision-makers what you built, what you learned and what the numbers showed.</p>
+                        <p class="invite__body">We welcome practical, honest talks over product pitches: lessons from failure, regulatory navigation, technical design choices and measurable outcomes.</p>
+                        <p class="invite__body">Apply to speak and share practical lessons, technical design choices, regulatory navigation, and measurable outcomes with UK decision-makers.</p>
+                        <div class="actions">
+                            <button class="btn btn--light" type="button" data-modal="speaker">Apply to Speak</button>
+                        </div>
+                    </div>
+                    <!-- REPLACE: speaking-stage.jpg 1400 × 1050 (4:3) -->
+                    <figure class="media" data-tone="sky" data-size="1400 × 1050 · 4:3">
+                        <img src="assets/images/Interested in Speaking.png" alt="Speaker presenting on stage to an engaged audience" loading="lazy">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BECOME A SPONSOR ================= -->
+        <section class="section section--white" id="sponsor" aria-labelledby="sponsor-title">
+            <div class="container sponsor">
+                <div class="sponsor__media rv">
+                    <!-- REPLACE: sponsor-showcase.jpg 1200 × 1500 (4:5) -->
+                    <figure class="media" data-tone="violet" data-size="1200 × 1500 · 4:5">
+                        <img src="assets/images/Become a Sponsor.png" alt="Solution provider demonstrating their platform to delegates" loading="lazy">
+                    </figure>
+                    <div class="badge">
+                        <span class="icon-tile icon-tile--solid"><svg class="ic">
+                                <use href="#i-globe" />
+                            </svg></span>
+                        <div><small>Partners</small><strong>8+ International Sponsors</strong></div>
+                    </div>
+                </div>
+                <div class="sponsor__copy rv rv-d1">
+                    <h2 id="sponsor-title">Become a Sponsor</h2>
+                    <p class="lead">Put your brand in front of the senior buyers shaping AI investment across the UK and Europe.</p>
+                    <ul class="benefits" id="benefits"></ul>
+                    <div class="actions">
+                        <button class="btn btn--primary" type="button" data-modal="sponsor">Become a Sponsor</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 1-ON-1 MEETINGS ================= -->
+        <section class="section section--lilac" id="meetings" aria-labelledby="meet-title">
+            <div class="container meet">
+                <div class="rv">
+                    <h2 id="meet-title">1-on-1 Meetings</h2>
+                    <p class="lead">Pre-arranged private meetings with senior leaders who are actively evaluating solutions. We match you with relevant delegates so every conversation counts.</p>
+                    <p class="meet__note">Enquire about pre-arranged meetings with relevant senior delegates.</p>
+                    <div class="actions">
+                        <button class="btn btn--primary" type="button" data-modal="meetings">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="meet__media rv rv-d1">
+                    <!-- REPLACE: meetings.jpg 1400 × 1050 (4:3) -->
+                    <figure class="media" data-tone="mix" data-size="1400 × 1050 · 4:3">
+                        <img src="assets/images/1-on-1 Meetings.png" alt="Two executives in a private one-on-one business meeting" loading="lazy">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ROUNDTABLE DISCUSSIONS ================= -->
+        <section class="section section--white" id="roundtables" aria-labelledby="rt-title">
+            <div class="container">
+                <!-- REPLACE: roundtable.jpg 2100 × 900 (7:3) -->
+                <figure class="media rt__img rv" data-tone="sky" data-size="2100 × 900 · 7:3">
+                    <img src="assets/images/Roundtable Discussions.png" alt="Senior leaders seated around a roundtable discussion" loading="lazy">
+                </figure>
+                <div class="rt__card rv rv-d1">
+                    <div class="rt__top">
+                        <div class="rt__aside">
+                            <h2 id="rt-title">Roundtable Discussions</h2>
+                            <figure class="media rt__inset" data-tone="sky" data-size="900 × 1125 · 4:5">
+                                <img src="assets/images/Roundtable Discussions.png" alt="Senior leaders in discussion around a roundtable" loading="lazy">
+                            </figure>
+                        </div>
+                        <div>
+                            <p class="lead">Host a small, closed-door discussion on a topic you choose, such as agent governance, security or cost control. Lead the conversation, share your expertise and build relationships with the leaders who attend.</p>
+                        </div>
+                    </div>
+                    <div class="rt__foot">
+                        <p>Interested in hosting a roundtable? Get in touch with the summit team.</p>
+                        <button class="btn btn--primary" type="button" data-modal="roundtable">Sponsor a Roundtable Discussion</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= REGISTRATION PACKAGES ================= -->
+        <section class="section section--mist" id="packages" aria-labelledby="pkg-title">
+            <div class="container">
+                <div class="head rv" style="margin-inline:auto;text-align:center">
+                    <h2 id="pkg-title">Register as a Delegate</h2>
+                </div>
+                <div class="tickets rv rv-d1" id="tickets"></div>
+            </div>
+        </section>
+<!-- ================= FINAL CTA / LOCATION ================= -->
+        <section class="section section--white" id="register" aria-labelledby="final-title" style="padding-top:0">
+            <div class="container">
+                <div class="finale rv">
+                    <!-- REPLACE: london.jpg 2400 × 1000 (12:5) -->
+                    <figure class="media media--label-corner" data-tone="sky" data-size="2400 × 1000 · 12:5">
+                        <img src="assets/images/WhatsApp Image 2026-09-30 at 1.18.18 PM.jpeg" alt="" loading="lazy">
+                    </figure>
+                    <div class="finale__overlay" aria-hidden="true"></div>
+                    <div class="finale__content">
+                        <h2 id="final-title">Join the NexGen Agentic AI Summit, London Edition</h2>
+                        <div class="finale__meta">
+                            <span><svg class="ic">
+                                    <use href="#i-calendar" />
+                                </svg>3rd June 2027</span>
+                            <span><svg class="ic">
+                                    <use href="#i-clock" />
+                                </svg>09:00 HRS BST</span>
+                            <span><svg class="ic">
+                                    <use href="#i-pin" />
+                                </svg>London, United Kingdom</span>
+                        </div>
+                        <!-- PLACEHOLDER: venue not supplied in content doc -->
+                        <p class="finale__venue">Venue: [venue name and address to be confirmed]</p>
+                        <div class="actions">
+                            <button class="btn btn--light" type="button" data-modal="register">Register as Delegate</button>
+                            <button class="btn btn--on-dark" type="button" data-modal="sponsor">Become a Sponsor</button>
+                            <button class="btn btn--on-dark" type="button" data-modal="agenda">Request Agenda</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="foot">
+        <div class="container">
+            <div class="foot__top">
+                <div class="foot__brand">
+                    <a class="brand" href="#top" aria-label="Back to top">
+                        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+                            <circle cx="20" cy="20" r="18.5" fill="none" stroke="#6A4BEA" stroke-width="1.2" opacity=".35" />
+                            <circle cx="20" cy="20" r="12.5" fill="none" stroke="#2A5CFF" stroke-width="1.6" opacity=".7" />
+                            <circle cx="20" cy="20" r="5.5" fill="#2A5CFF" />
+                        </svg>
+                        <span><span class="brand__name">NEXGEN</span><span class="brand__sub">Agentic AI Summit, London</span></span>
+                    </a>
+                    <p class="foot__about">An in-person summit on deploying, scaling, and governing agentic AI in the enterprise. London, United Kingdom, 3rd June 2027.</p>
+                    <div class="social">
+                        <a href="https://www.linkedin.com/company/nexgen-autonomous-agentic-ai-summit/" target="_blank" rel="noopener noreferrer" aria-label="NexGen on LinkedIn"><svg class="ic">
+                                <use href="#i-linkedin" />
+                            </svg></a>
+                        <button type="button" aria-label="Contact the team" data-modal="contact"><svg class="ic">
+                                <use href="#i-mail" />
+                            </svg></button>
+                    </div>
+                </div>
+                <div>
+                    <h4>Summit</h4>
+                    <ul>
+                        <li><a href="#about">About the Event</a></li>
+                        <li><a href="#why">Why Attend</a></li>
+                        <li><a href="#topics">Topics We Cover</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Participate</h4>
+                    <ul>
+                        <li><button type="button" data-modal="register">Register as Delegate</button></li>
+                        <li><button type="button" data-modal="speaker">Apply to Speak</button></li>
+                        <li><button type="button" data-modal="agenda">Request Agenda</button></li>
+                        <li><a href="#packages">Registration Packages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Partner</h4>
+                    <ul>
+                        <li><button type="button" data-modal="sponsor">Become a Sponsor</button></li>
+                        <li><a href="#meetings">1-on-1 Meetings</a></li>
+                        <li><a href="#roundtables">Roundtable Discussions</a></li>
+                        <li><button type="button" data-modal="contact">Contact Us</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot__bottom">
+                <span>© 2026 NexGen Agentic AI Summit. All rights reserved.</span>
+                <nav aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="code-of-conduct.html">Code of conduct</a></nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL (all forms) ================= -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" inert>
+        <div class="modal__scrim" data-close></div>
+        <div class="modal__box">
+            <button class="modal__close" type="button" data-close aria-label="Close"><svg class="ic" style="width:16px;height:16px">
+                    <use href="#i-close" />
+                </svg></button>
+            <h3 id="modal-title">Register as Delegate</h3>
+            <p class="modal__copy" id="modal-copy"></p>
+            <div id="modal-form"></div>
+        </div>
+    </div>
+
+    <script>
+        /* =================================================================
+       CONTENT — single source for all repeating sections.
+       Copy is taken verbatim from the updated content document.
+       Image paths point at /assets/images; missing files render as
+       labelled placeholders automatically (see initMedia).
+       ================================================================= */
+        const CONTENT = {
+            stats: [{
+                    n: 25, s: "+", label: "Expert Speakers", icon: "mic"
+                }, {
+                    n: 300, s: "+", label: "Delegates", icon: "users"
+                }, {
+                    n: 20, s: "+", label: "Sessions", icon: "sessions"
+                }, {
+                    n: 8, s: "+", label: "Sponsors", icon: "globe"
+                }
+            ],
+
+            /* Card titles are short scanning labels added for the layout; descriptions are verbatim. */
+            why: [{
+                    t: "Real UK case studies", icon: "book",
+                    d: "Hear from organisations across banking, insurance, healthcare, retail and government on what they deployed, what broke and what they would do differently."
+                }, {
+                    t: "Regulation without the fog", icon: "shield",
+                    d: "Understand what expectations from the FCA, PRA, ICO and sector regulators mean in practice for autonomous systems, alongside UK GDPR and the EU AI Act for firms operating across borders."
+                }, {
+                    t: "Build it properly", icon: "layers",
+                    d: "Get hands-on insight into agent architecture, orchestration, testing and monitoring from engineers who run these systems in production."
+                }, {
+                    t: "Know your numbers", icon: "trend",
+                    d: "Learn how teams measure value, control running costs and build business cases that survive scrutiny from the finance director."
+                }, {
+                    t: "Security and trust", icon: "shield",
+                    d: "Explore how to give agents safe access to systems and data, and how to contain the damage when something goes wrong."
+                }, {
+                    t: "People and change", icon: "users",
+                    d: "Find out how to bring staff, unions, customers and boards along as roles and workflows change."
+                }, {
+                    t: "Vendor clarity", icon: "balance",
+                    d: "Meet platform and tool providers and compare approaches without the sales fog."
+                }, {
+                    t: "Network with the right people", icon: "network",
+                    d: "Network with the right people: Spend a full day with senior leaders facing the same problems as you, with lunch, roundtables and an evening reception to continue the conversation."
+                }
+            ],
+            whyClosing: "Count Me In!",
+
+            audience: [{
+                    r: "AI & Machine Learning", icon: "cpu"
+                }, {
+                    r: "Agentic AI & Automation", icon: "sparkle"
+                }, {
+                    r: "Enterprise & Solution Architecture", icon: "building"
+                }, {
+                    r: "Platform Engineering & DevOps", icon: "terminal"
+                }, {
+                    r: "Data & Analytics", icon: "chart"
+                }, {
+                    r: "Digital Transformation", icon: "refresh"
+                }, {
+                    r: "Cyber Security & Information Security", icon: "shield"
+                }, {
+                    r: "Risk, Compliance & Legal", icon: "balance"
+                }, {
+                    r: "Operations & Customer Service", icon: "headset"
+                }, {
+                    r: "Procurement & Vendor Management", icon: "cart"
+                }, {
+                    r: "Public Sector Innovation", icon: "building"
+                }, {
+                    r: "Others", icon: "plus", other: true
+                }
+            ],
+
+            /* Gallery: captions describe the shot the design team should supply. */
+            gallery: [{
+                    file: "assets/images/Event Highlights 1.png",
+                    size: "1600 × 1200 · 4:3",
+                    type: "feature",
+                    tone: "mix",
+                    cap: "Keynote session",
+                    alt: "Keynote session on the main stage"
+                },
+                {
+                    file: "assets/images/Event Highlights 2.png",
+                    size: "800 × 600 · 4:3",
+                    type: "sm",
+                    tone: "sky",
+                    cap: "Panel discussion",
+                    alt: "Panel discussion with enterprise AI leaders"
+                },
+                {
+                    file: "assets/images/Event Highlights 3.png",
+                    size: "800 × 600 · 4:3",
+                    type: "sm",
+                    tone: "violet",
+                    cap: "Live Q&A",
+                    alt: "Audience member asking a question during live Q&A"
+                },
+                {
+                    file: "assets/images/Event Highlights 4.png",
+                    size: "800 × 600 · 4:3",
+                    type: "sm",
+                    tone: "violet",
+                    cap: "Networking",
+                    alt: "Delegates networking between sessions"
+                },
+                {
+                    file: "assets/images/Event Highlights 5.png",
+                    size: "800 × 600 · 4:3",
+                    type: "sm",
+                    tone: "sky",
+                    cap: "Solution provider showcase",
+                    alt: "Solution provider demonstrating a platform"
+                },
+                {
+                    file: "assets/images/Event Highlights 6.png",
+                    size: "800 × 600 · 4:3",
+                    type: "sm",
+                    tone: "mix",
+                    cap: "Roundtable",
+                    alt: "Roundtable discussion in progress"
+                },
+                {
+                    file: "assets/images/Event Highlights 7.png",
+                    size: "1600 × 600 · 8:3",
+                    type: "wide",
+                    tone: "sky",
+                    cap: "Main conference hall",
+                    alt: "Wide view of the main conference hall"
+                },
+                {
+                    file: "assets/images/Event Highlights 8.png",
+                    size: "800 × 600 · 4:3",
+                    type: "sm",
+                    tone: "violet",
+                    cap: "After-hours networking reception",
+                    alt: "Attendees at the after-hours networking reception"
+                }
+            ],
+
+            industries: [{
+                    r: "Banking & Financial Services", icon: "bank"
+                }, {
+                    r: "Insurance & Lloyd's Market", icon: "umbrella"
+                }, {
+                    r: "Healthcare, NHS & Life Sciences", icon: "heart"
+                }, {
+                    r: "Public Sector & Government", icon: "building"
+                }, {
+                    r: "Retail & Consumer Goods", icon: "bag"
+                }, {
+                    r: "Telecoms & Media", icon: "antenna"
+                }, {
+                    r: "Energy & Utilities", icon: "plug"
+                }, {
+                    r: "Manufacturing & Logistics", icon: "factory"
+                }, {
+                    r: "Legal & Professional Services", icon: "briefcase"
+                }, {
+                    r: "Technology & Software", icon: "code"
+                }
+            ],
+
+            topics: [{
+                    t: "Beyond the Chatbot: What Agentic AI Really Changes for UK Business", tag: "Strategy", icon: "sparkle"
+                }, {
+                    t: "Choosing Use Cases That Deserve an Agent (and Those That Don't)", tag: "Strategy", icon: "check"
+                }, {
+                    t: "Designing the Agent Stack: Build, Buy or Blend", tag: "Architecture", icon: "layers"
+                }, {
+                    t: "Making Agents Work Alongside Legacy Systems", tag: "Integration", icon: "plug"
+                }, {
+                    t: "Orchestrating Many Agents Without Losing Control", tag: "Orchestration", icon: "network"
+                }, {
+                    t: "Who Is Accountable? Governance, Senior Manager Responsibility and Board Oversight", tag: "Governance", icon: "balance"
+                }, {
+                    t: "Complying in Practice: UK GDPR, FCA and PRA Expectations, and the EU AI Act", tag: "Regulation", icon: "shield"
+                }, {
+                    t: "Giving Agents the Right Access: Identity, Permissions and Data Security", tag: "Security", icon: "shield"
+                }, {
+                    t: "Testing and Monitoring: Catching Failures Before Customers Do", tag: "Reliability", icon: "gauge"
+                }, {
+                    t: "The Real Cost of Running Agents at Scale", tag: "Operations", icon: "trend"
+                }, {
+                    t: "Proving the Return: Metrics Your CFO Will Accept", tag: "ROI", icon: "trend"
+                }, {
+                    t: "Agentic AI in Financial Services, Healthcare and the Public Sector", tag: "Industry", icon: "building"
+                }, {
+                    t: "Workforce, Skills and Change: Preparing People for AI Colleagues", tag: "Workforce", icon: "users"
+                }, {
+                    t: "Responsible and Trustworthy AI: Fairness, Transparency and Customer Trust", tag: "Trust", icon: "heart"
+                }
+            ],
+
+            /* Speaker placeholders: company logos until names/photos are confirmed. */
+            logos: [{
+                    name: "easyJet", file: "assets/logos/speakers/easyjet.png", ratio: 1.6
+                }, {
+                    name: "Whitbread", file: "assets/logos/speakers/whitbread.png", ratio: 2
+                }, {
+                    name: "John Lewis Partnership", file: "assets/logos/speakers/john-lewis-partnership.png", ratio: 2.9
+                }, {
+                    name: "Schneider Electric", file: "assets/logos/speakers/schneider-electric.png", ratio: 3.3
+                }, {
+                    name: "Rio Tinto", file: "assets/logos/speakers/rio-tinto.png", ratio: 2.2
+                }, {
+                    name: "HSBC", file: "assets/logos/speakers/hsbc.png", ratio: 3.3
+                }, {
+                    name: "AstraZeneca", file: "assets/logos/speakers/astrazeneca.png", ratio: 3.3
+                }, {
+                    name: "Vodafone", file: "assets/logos/speakers/vodafone.png", ratio: 3.3
+                }, {
+                    name: "BT Group", file: "assets/logos/speakers/bt-group.png", ratio: 2
+                }, {
+                    name: "Centrica", file: "assets/logos/speakers/centrica.png", ratio: 2
+                }
+            ],
+
+            /* Featured organizations (content-doc order). file may be a local name or a full URL. */
+            orgs: [{
+                    name: "Unilever", file: "assets/logos/featured/unilever.png", ratio: 2
+                }, {
+                    name: "BAE Systems", file: "assets/logos/featured/bae-systems.png", ratio: 2.8
+                }, {
+                    name: "Sainsbury's", file: "assets/logos/featured/sainsburys.png", ratio: 2.2
+                }, {
+                    name: "Lloyds Banking Group", file: "assets/logos/featured/lloyds-banking-group.png", ratio: 2.5
+                }, {
+                    name: "National Grid", file: "assets/logos/featured/national-grid.png", ratio: 2
+                }, {
+                    name: "Rolls-Royce", file: "assets/logos/featured/rolls-royce.png", ratio: 2
+                }, {
+                    name: "Barclays", file: "assets/logos/featured/barclays.png", ratio: 3.3
+                }, {
+                    name: "Tesco", file: "assets/logos/featured/tesco.png", ratio: 2.8
+                }, {
+                    name: "Anglo American", file: "assets/logos/featured/anglo-american.png", ratio: 3.1
+                }, {
+                    name: "GSK", file: "assets/logos/featured/gsk.png", ratio: 2.5
+                }
+            ],
+
+            packages: [{
+                    id: "delegate",
+                    price: "$599",
+                    name: "In-Person Delegate",
+                    feature: false,
+                    items: [
+                        "Full access to in-person conference sessions",
+                        "Access to 2 Theatres of Content",
+                        "Engage in Panel Discussions & Live Q&A",
+                        "Network with industry peers, partners, tech leaders & startups",
+                        "Complimentary breakfast, coffee/tea & lunch",
+                        "Access to After-Hours Networking Reception"
+                    ]
+                }, {
+                    id: "provider",
+                    price: "$1,199",
+                    name: "In-Person Solution Provider",
+                    feature: true,
+                    items: [
+                        "Full access to in-person conference sessions",
+                        "Access to 2 Theatres of Content",
+                        "Participate in Panel Discussions & Live Q&A",
+                        "Connect with decision-makers, clients & industry leaders",
+                        "Complimentary breakfast, coffee/tea & lunch",
+                        "Access to After-Hours Networking Reception",
+                        "Dedicated listing in the sponsor directory"
+                    ]
+                }
+            ],
+
+            benefits: [{
+                    t: "Meet decision-makers", icon: "network",
+                    d: "Reach CIOs, CTOs, risk leaders and heads of AI with live budgets and live problems."
+                }, {
+                    t: "Show, don't tell", icon: "award",
+                    d: "Demonstrate your platform on stage, at a stand or in a focused roundtable."
+                }, {
+                    t: "Build credibility in the UK market", icon: "globe",
+                    d: "Associate your brand with a trusted, practitioner-led event."
+                }, {
+                    t: "Hear the buyer's view", icon: "trend",
+                    d: "Learn what UK enterprises actually need from vendors on security, compliance and cost."
+                }
+            ],
+        };
+
+        /* =================================================================
+           HELPERS
+           ================================================================= */
+        const $ = (s, c = document) => c.querySelector(s);
+        const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+        const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const pad2 = n => String(n).padStart(2, "0");
+        const esc = s => String(s).replace(/[&<>"]/g, c => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;"
+        } [c]));
+        const icon = (name, cls = "ic") => `<svg class="${cls}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+        const media = ({
+                src,
+                size,
+                alt = "",
+                tone = "",
+                cls = "",
+                fallback = ""
+            }) =>
+            `<figure class="media ${cls}" data-size="${esc(size)}"${tone ? ` data-tone="${tone}"` : ""}><img src="${esc(src)}" alt="${esc(alt)}"${fallback ? ` data-fallback="${esc(fallback)}"` : ""} loading="lazy" decoding="async"></figure>`;
+        const fmtDate = iso => new Date(iso + "T12:00:00").toLocaleDateString("en-GB", {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        });
+
+        /* =================================================================
+           RENDER
+           ================================================================= */
+        function render() {
+            $("#stat-cards").innerHTML = CONTENT.stats.map((s, i) => `
+        <div class="stat${i === 0 ? " stat--feature" : ""}">
+          <span class="icon-tile">${icon(s.icon)}</span>
+          <div>
+            <span class="stat__num" data-to="${s.n}" data-suffix="${s.s}">${s.n}${s.s}</span>
+            <span class="stat__label">${esc(s.label)}</span>
+          </div>
+        </div>`).join("");
+
+            $("#why-grid").insertAdjacentHTML("beforeend",
+                CONTENT.why.map(w => `
+          <article class="feature">
+            <span class="icon-tile">${icon(w.icon)}</span>
+            <h3>${esc(w.t)}</h3>
+            <p>${esc(w.d)}</p>
+          </article>`).join("") + `
+          <div class="bento__cta">
+            <span class="icon-tile icon-tile--solid">${icon("store")}</span>
+            <p>${esc(CONTENT.whyClosing)}</p>
+            <div><button class="btn btn--primary" type="button" data-modal="register">Count Me In!</button></div>
+          </div>`);
+
+            $("#roles").innerHTML = CONTENT.audience.map((a, i) => `
+        <li class="role${a.other ? " role--other" : ""}">
+          <span class="icon-tile${i % 2 ? " icon-tile--violet" : ""}">${icon(a.icon)}</span>${esc(a.r)}
+        </li>`).join("");
+
+            $("#gallery").innerHTML = CONTENT.gallery.map(g => `
+        <figure class="g-item g-item--${g.type}">
+          ${media({ src: g.file, size: g.size, alt: g.alt, tone: g.tone })}
+          <figcaption>${esc(g.cap)}</figcaption>
+        </figure>`).join("");
+
+            $("#industries").innerHTML = CONTENT.industries.map((x, i) => `
+        <li class="industry">
+          <span class="icon-tile${i % 3 === 1 ? " icon-tile--violet" : i % 3 === 2 ? " icon-tile--solid" : ""}">${icon(x.icon)}</span>
+          <h3>${esc(x.r)}</h3>
+        </li>`).join("");
+
+            $("#topics-list").innerHTML = CONTENT.topics.map((t, i) => `
+        <li class="topic">
+          <div class="topic__top">
+            <span class="icon-tile${i % 3 === 1 ? " icon-tile--violet" : i % 3 === 2 ? " icon-tile--solid" : ""}">${icon(t.icon)}</span>
+            <span class="topic__num" aria-hidden="true">${pad2(i + 1)}</span>
+          </div>
+          <span class="topic__tag">${esc(t.tag)}</span>
+          <h3>${esc(t.t)}</h3>
+          <span class="topic__mark" aria-hidden="true">${pad2(i + 1)}</span>
+        </li>`).join("") + `
+        <li class="topic topic--cta">
+          <div class="topic__top">
+            <span class="icon-tile">${icon("sessions")}</span>
+            <span class="topic__num" aria-hidden="true">15</span>
+          </div>
+          <span class="topic__tag">Agenda</span>
+          <h3>Get the full agenda</h3>
+          <button class="btn btn--light btn--sm" type="button" data-modal="agenda">Request Agenda</button>
+          <span class="topic__mark" aria-hidden="true">15</span>
+        </li>`;
+
+            /* Logos: equal visual area, never stretched. height = sqrt(area / ratio), capped. */
+            const AREA = 3400,
+                MAX_H = 56,
+                MIN_H = 22;
+            const logoSrc = file => /^https?:\/\//i.test(file) ? file : file.includes("/") ? file : "assets/logos/" + file;
+            const logoCells = list => list.map(l => {
+                const h = Math.min(MAX_H, Math.max(MIN_H, Math.sqrt(AREA / l.ratio))).toFixed(1);
+                return `<li class="logo-cell" data-name="${esc(l.name)}"><img src="${esc(logoSrc(l.file))}" alt="${esc(l.name)}" style="--h:${h}px" loading="lazy" decoding="async"></li>`;
+            }).join("");
+            $("#logo-grid").innerHTML = logoCells(CONTENT.logos);
+            $("#org-grid").innerHTML = logoCells(CONTENT.orgs);
+
+            $("#benefits").innerHTML = CONTENT.benefits.map((b, i) => `
+        <li class="benefit">
+          <span class="icon-tile${i % 2 ? " icon-tile--violet" : ""}">${icon(b.icon)}</span>
+          <h3>${esc(b.t)}</h3>
+          <p>${esc(b.d)}</p>
+        </li>`).join("");
+
+            $("#tickets").innerHTML = CONTENT.packages.map(p => `
+        <div class="ticket-wrap">
+          <article class="ticket${p.feature ? " ticket--feature" : ""}" aria-labelledby="pkg-${p.id}">
+            <div class="ticket__stub">
+              <div class="ticket__tag">
+                <h3 id="pkg-${p.id}">${esc(p.name)}</h3>
+                <span class="icon-tile${p.feature ? " icon-tile--solid" : ""}" style="${p.feature ? "background:rgba(255,255,255,.2);box-shadow:none" : ""}">${icon(p.feature ? "store" : "users")}</span>
+              </div>
+              <span class="ticket__price">${esc(p.price)}</span>
+            </div>
+            <div class="ticket__body">
+              <ul class="ticket__list">${p.items.map(it => `<li>${icon("check")}<span>${esc(it)}</span></li>`).join("")}</ul>
+              <button class="btn ${p.feature ? "btn--primary" : "btn--outline"} btn--block" type="button" data-modal="register" data-package="${p.id}">Register Now</button>
+            </div>
+          </article>
+        </div>`).join("");
+
+
+        }
+
+        /* =================================================================
+           MEDIA — show labelled placeholder when a file is missing
+           ================================================================= */
+        function initMedia() {
+            $$(".media").forEach(fig => {
+                const img = $("img", fig);
+                if (!img) return;
+                fig.dataset.file = (img.getAttribute("src") || "").split("/").pop();
+                /* local file first; if absent, try data-fallback once; otherwise show the placeholder */
+                const fail = () => {
+                    if (img.dataset.fallback && !img.dataset.usedFallback) {
+                        img.dataset.usedFallback = "1";
+                        img.src = img.dataset.fallback;
+                    } else fig.classList.add("is-missing");
+                };
+                if (img.complete && img.naturalWidth === 0) fail();
+                img.addEventListener("error", fail);
+            });
+            $$(".logo-cell img").forEach(img => {
+                const miss = () => img.parentElement.classList.add("is-missing");
+                if (img.complete && img.naturalWidth === 0) miss();
+                img.addEventListener("error", miss, {
+                    once: true
+                });
+            });
+        }
+
+        /* =================================================================
+           NAV — stuck state, scroll progress, active link, drawer
+           ================================================================= */
+        function initNav() {
+            const nav = $("#nav"),
+                bar = $("#nav-progress"),
+                burger = $("#burger"),
+                drawer = $("#drawer");
+            let ticking = false;
+            const sync = () => {
+                ticking = false;
+                const y = scrollY,
+                    max = document.documentElement.scrollHeight - innerHeight;
+                nav.classList.toggle("is-stuck", y > 24);
+                bar.style.setProperty("--p", max > 0 ? Math.min(y / max, 1).toFixed(4) : "0");
+            };
+            addEventListener("scroll", () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(sync)
+                }
+            }, {
+                passive: true
+            });
+            addEventListener("resize", sync, {
+                passive: true
+            });
+            sync();
+
+            const setDrawer = open => {
+                drawer.classList.toggle("is-open", open);
+                drawer.inert = !open;
+                burger.setAttribute("aria-expanded", open);
+                burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+                document.body.style.overflow = open ? "hidden" : "";
+            };
+            burger.addEventListener("click", () => setDrawer(!drawer.classList.contains("is-open")));
+            $$("a, button", drawer).forEach(el => el.addEventListener("click", () => setDrawer(false)));
+            addEventListener("keydown", e => {
+                if (e.key === "Escape" && drawer.classList.contains("is-open")) {
+                    setDrawer(false);
+                    burger.focus()
+                }
+            });
+            matchMedia("(min-width: 1081px)").addEventListener("change", e => {
+                if (e.matches) setDrawer(false)
+            });
+
+            const links = new Map($$("#navlinks a").map(a => [a.getAttribute("href").slice(1), a]));
+            /* observe every section so the highlight clears in sections not listed in the nav */
+            const io = new IntersectionObserver(entries => entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                links.forEach(l => l.removeAttribute("aria-current"));
+                links.get(e.target.id)?.setAttribute("aria-current", "true");
+            }), {
+                rootMargin: "-45% 0px -50% 0px"
+            });
+            $$("main section[id]").forEach(el => io.observe(el));
+        }
+
+        /* =================================================================
+           REVEAL + COUNT-UP
+           ================================================================= */
+        function initReveal() {
+            const io = new IntersectionObserver(es => es.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add("in");
+                    io.unobserve(e.target)
+                }
+            }), {
+                rootMargin: "0px 0px -8% 0px"
+            });
+            $$(".rv").forEach(el => io.observe(el));
+        }
+
+        function initCounters() {
+            const wrap = $("#stat-cards");
+            const run = () => $$("[data-to]", wrap).forEach(el => {
+                const to = +el.dataset.to,
+                    sfx = el.dataset.suffix || "";
+                if (REDUCED) {
+                    el.textContent = to + sfx;
+                    return
+                }
+                const t0 = performance.now(),
+                    dur = 1200;
+                const tick = now => {
+                    const k = Math.min((now - t0) / dur, 1);
+                    el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + sfx;
+                    if (k < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+            });
+            new IntersectionObserver((es, ob) => es.forEach(e => {
+                if (e.isIntersecting) {
+                    run();
+                    ob.disconnect()
+                }
+            }), {
+                threshold: .35
+            }).observe(wrap);
+        }
+
+        /* =================================================================
+           MODAL — one dialog, configured per CTA (data-modal="kind")
+           DEMO ONLY: connect submit() to the registration/CRM endpoint.
+           ================================================================= */
+        function initModal() {
+            const m = $("#modal"),
+                title = $("#modal-title"),
+                copy = $("#modal-copy"),
+                body = $("#modal-form");
+            let lastTrigger = null;
+
+            const KINDS = {
+                register: {
+                    t: "Register as Delegate",
+                    c: "Reserve your place at the NexGen Agentic AI Summit, London Edition, 3rd June 2027.",
+                    b: "Send registration request",
+                    pkg: true
+                },
+                sponsor: {
+                    t: "Become a Sponsor",
+                    c: "Tell us about your organization and we'll share sponsorship options.",
+                    b: "Request sponsorship details",
+                    extra: "Sponsorship interest"
+                },
+                agenda: {
+                    t: "Request Agenda",
+                    c: "We'll email you the agenda for the London Edition.",
+                    b: "Request agenda"
+                },
+                speaker: {
+                    t: "Apply to Speak",
+                    c: "Share how your organization is moving agentic AI from pilot to production.",
+                    b: "Submit application",
+                    extra: "Proposed talk and short bio"
+                },
+                meetings: {
+                    t: "1-on-1 Meetings",
+                    c: "Enquire about pre-arranged meetings with relevant senior delegates.",
+                    b: "Send enquiry",
+                    extra: "Who would you like to meet?"
+                },
+                roundtable: {
+                    t: "Sponsor a Roundtable Discussion",
+                    c: "Tell us about the discussion you'd like to lead.",
+                    b: "Send enquiry",
+                    extra: "Proposed roundtable topic"
+                },
+                contact: {
+                    t: "Contact Us",
+                    c: "Questions about registration, sponsorship or speaking.",
+                    b: "Send message",
+                    extra: "How can we help?"
+                }
+            };
+
+            const formHTML = (k, pkg) => `
+        <label class="field"><span>Full name</span><input type="text" id="f-name" autocomplete="name" required></label>
+        <label class="field"><span>Work email</span><input type="email" id="f-email" autocomplete="email" required></label>
+        <label class="field"><span>Company</span><input type="text" id="f-co" autocomplete="organization"></label>
+        <label class="field"><span>Job title</span><input type="text" id="f-role" autocomplete="organization-title"></label>
+        ${k.pkg ? `<label class="field"><span>Package</span><select id="f-pkg">${CONTENT.packages.map(p => `<option value="${p.id}"${p.id === pkg ? " selected" : ""}>${esc(p.name)} (${esc(p.price)})</option>`).join("")}</select></label>` : ""}
+        ${k.extra ? `<label class="field"><span>${esc(k.extra)}</span><textarea id="f-extra"></textarea></label>` : ""}
+        <p class="modal__error" id="f-error" role="alert" hidden></p>
+        <button class="btn btn--primary btn--block" type="button" id="modal-submit" style="margin-top:22px">${esc(k.b)}</button>
+        <p class="modal__note">Demo form: no data leaves this page. Connect it to your registration platform before launch.</p>`;
+
+            function submit() {
+                const name = $("#f-name").value.trim(),
+                    email = $("#f-email").value.trim(),
+                    err = $("#f-error");
+                if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
+                    err.textContent = "Add your full name and a valid work email to continue.";
+                    err.hidden = false;
+                    (!name ? $("#f-name") : $("#f-email")).focus();
+                    return;
+                }
+                body.innerHTML = `<div class="modal__done" role="status"><strong>Request received</strong>Thanks ${esc(name.split(" ")[0])}. We'll follow up at ${esc(email)}.</div>
+          <button class="btn btn--outline btn--block" type="button" data-close style="margin-top:16px">Close</button>`;
+                $("[data-close]", body).addEventListener("click", close);
+                $("[data-close]", body).focus();
+            }
+
+            function open(kind, trigger) {
+                const k = KINDS[kind] || KINDS.register;
+                lastTrigger = trigger;
+                title.textContent = k.t;
+                copy.textContent = k.c;
+                body.innerHTML = formHTML(k, trigger?.dataset.package);
+                $("#modal-submit").addEventListener("click", submit);
+                m.inert = false;
+                m.classList.add("is-open");
+                document.body.style.overflow = "hidden";
+                setTimeout(() => $("#f-name")?.focus(), 80);
+            }
+
+            function close() {
+                m.classList.remove("is-open");
+                m.inert = true;
+                document.body.style.overflow = "";
+                lastTrigger?.focus();
+            }
+
+            document.addEventListener("click", e => {
+                const t = e.target.closest("[data-modal]");
+                if (t) {
+                    e.preventDefault();
+                    open(t.dataset.modal, t)
+                }
+            });
+            $$("[data-close]", m).forEach(b => b.addEventListener("click", close));
+            addEventListener("keydown", e => {
+                if (!m.classList.contains("is-open")) return;
+                if (e.key === "Escape") close();
+                if (e.key === "Enter" && e.target.matches("input")) {
+                    e.preventDefault();
+                    submit()
+                }
+                if (e.key === "Tab") {
+                    const f = $$("button, input, select, textarea, a[href]", m).filter(el => el.offsetParent !== null);
+                    const first = f[0],
+                        last = f[f.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus()
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus()
+                    }
+                }
+            });
+        }
+
+        /* =================================================================
+           BOOT
+           ================================================================= */
+        render();
+        initMedia();
+        initNav();
+        initReveal();
+        initCounters();
+        initModal();
+        requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add("is-loaded")));
+    </script>
+</body>
+
+</html>
